@@ -1,0 +1,52 @@
+/* .toc ul > li:before, .h-entry .task-list > li:before { */
+/*     content: "" !important; */
+/*     margin-left: 0; */
+/* } */
+
+/* .toc div > ul { */
+/*     margin: 0.5em 0 0 0; */
+/*     padding-left: 0; */
+/* } */
+
+/* .toc { */
+/*     background-color: #fff; */
+/*     border: 1px solid #ccc; */
+/*     margin: 1em auto; */
+/*     max-width: 300px; */
+/*     padding: 0.5em; */
+/* } */
+
+/* .toc ul ul { */
+/*     padding-left: 1em; */
+/* } */
+
+/* .toc h2 { */
+/*     border: none; */
+/*     font-size: 1em; */
+/*     margin: 0; */
+/*     padding: 0; */
+/* } */
+
+/* .toc li { */
+/*     padding-right: 1em; */
+/*     position: relative; */
+/* } */
+
+#toc .collapse-button {
+    color: #cccccc;
+    height: auto;
+    margin-left: 0.5em;
+    width: auto;
+}
+
+/* .toc .collapsed { */
+/*     border: none; */
+/* } */
+
+#toc ul .collapse-button:before {
+    content: "\F104";
+}
+
+#toc ul .collapse-button[aria-expanded="true"]:before {
+    content: "\F107";
+}

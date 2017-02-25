@@ -1,0 +1,31 @@
+h1:hover .header-anchor, h2:hover .header-anchor, h3:hover .header-anchor, h4:hover .header-anchor, h5:hover .header-anchor, h6:hover .header-anchor {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.5s;
+}
+
+.h-entry .header-anchor {
+    border: none;
+    color: rgba(0, 0, 0, 0.0);
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    left: -1em;
+    position: absolute;
+    transition: all 0.5s;
+    user-select: none;           /* Non-prefixed version */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+}
+
+.h-entry .header-anchor:hover {
+    color: #999999 !important;
+}
+
+.header-anchor:before {
+    content: "\F0C1"; /* fa-link */
+    font-family: FontAwesome;
+}
