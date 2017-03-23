@@ -98,52 +98,65 @@ function convert (data) {
 
 // read contents of <iframe>
 function loadIframe (iframe) {
-  var deferred = $.Deferred()
-  var file = iframe.attr('src')
-  if (!file.match(/\.txt$/)) {
-    return loadAjax(iframe)
-  }
-  iframe.hide()
-  iframe.on('load', function () {
-    var contents = iframe.contents().text().trim()
-    var div = $('<div style="display: none">')
-    div.text(contents)
-    div.insertBefore(iframe)
-    iframe.remove()
-    var data = div.text().trim()
-    deferred.resolve(data)
+  return new Promise(function (resolve, reject) {
+    var file = iframe.attr('src')
+    if (!file.match(/\.txt$/)) {
+      return loadAjax(iframe)
+    }
+    iframe.hide()
+    iframe.on('load', function () {
+      var contents = iframe.contents().text().trim()
+      var div = $('<div style="display: none">')
+      div.text(contents)
+      div.insertBefore(iframe)
+      iframe.remove()
+      var data = div.text().trim()
+      resolve(data)
+    })
   })
-  return deferred.promise()
 }
 
 // read contents of file
 function loadFile (file) {
-  var deferred = $.Deferred()
-  $.get(file, function (data) {
-    deferred.resolve(data)
-  }, 'text')
-  return deferred.promise()
+  return new Promise(function (resolve, reject) {
+    $.get(file, resolve, 'text').fail(function () {
+      reject(file)
+    })
+  })
+}
+
+function loadFiles (files) {
+  var file = files.shift()
+  var promise = loadFile(file)
+  files.forEach(function (file) {
+    promise = promise.catch(function () {
+      return loadFile(file)
+    })
+  })
+  return promise
 }
 
 /* eslint-disable no-unused-vars */
 function loadAjax (iframe) {
-  var deferred = $.Deferred()
-  iframe.hide()
-  var src = iframe.attr('src')
-  var div = $('<div style="display: none">')
-  div.insertBefore(iframe)
-  iframe.remove()
-  loadFile(src).then(function (data) {
-    div.text(data)
-    deferred.resolve(data)
+  return new Promise(function (resolve, reject) {
+    iframe.hide()
+    var src = iframe.attr('src')
+    var div = $('<div style="display: none">')
+    div.insertBefore(iframe)
+    iframe.remove()
+    loadFile(src).then(function (data) {
+      div.text(data)
+      resolve(data)
+    })
   })
-  return deferred.promise()
 }
 
 // read Markdown from <iframe> or file and
 // insert the converted HTML into the document
 function loadData () {
-  var file = URI(window.location.href).filename().replace(/\.html$/, '.txt') || 'index.txt'
+  var files = ['index.md', 'index.txt']
+  files.unshift(URI(window.location.href).filename().replace(/\.html$/, '.txt'))
+  files.unshift(URI(window.location.href).filename().replace(/\.html$/, '.md'))
 
   // Markdown has already been loaded once
   var meta = $('meta[name=updated]')
@@ -158,19 +171,16 @@ function loadData () {
     loadIframe(iframe).then(convert).then(typeset)
   } else {
     // <body> contains no <iframe>: get file from <link> element
-    // (or default to index.txt)
     var link = $('link[type="text/markdown"]')
     if (link.length > 0) {
-      file = link.attr('href')
+      files.unshift(link.attr('href'))
     }
     // replace <body> with converted data from file
     // loadFile(file).then(convert).then(process).then(typeset)
-    loadFile(file).then(convert).then(typeset)
+    loadFiles(files).then(convert).then(typeset)
   }
 }
 
 $(function () {
   loadData()
-  // alert('url: ' + url())
-  // alert('path: ' + path())
 })

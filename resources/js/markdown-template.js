@@ -26491,7 +26491,7 @@ function amdefine(module, requireFn) {
 
 module.exports = amdefine;
 
-}).call(this,require('_process'),"/node_modules/handlebars/node_modules/source-map/node_modules/amdefine/amdefine.js")
+}).call(this,require('_process'),"/node_modules\\handlebars\\node_modules\\source-map\\node_modules\\amdefine\\amdefine.js")
 },{"_process":16,"path":15}],110:[function(require,module,exports){
 /*
 Syntax highlighting with language autodetection.
@@ -73354,6 +73354,8 @@ module.exports =
   '*[Viz.]: Videlicet\n' +
   '*[viz.]: videlicet\n' +
   '*[TL;DR]: Too long; didn\'t read\n' +
+  '*[AS]: aksjeselskap\n' +
+  '*[A/S]: aksjeselskap\n' +
   '*[Bl.a.]: Blant annet\n' +
   '*[bl.a.]: blant annet\n' +
   '*[F.eks.]: For eksempel\n' +
@@ -73700,7 +73702,7 @@ function links (view, path) {
 function compile (data, path) {
   var file = URI(path).filename()
   if (file === '') {
-    file = 'index.txt'
+    file = 'index.md'
   }
 
   data = data.trim()
@@ -73963,52 +73965,65 @@ function convert (data) {
 
 // read contents of <iframe>
 function loadIframe (iframe) {
-  var deferred = $.Deferred()
-  var file = iframe.attr('src')
-  if (!file.match(/\.txt$/)) {
-    return loadAjax(iframe)
-  }
-  iframe.hide()
-  iframe.on('load', function () {
-    var contents = iframe.contents().text().trim()
-    var div = $('<div style="display: none">')
-    div.text(contents)
-    div.insertBefore(iframe)
-    iframe.remove()
-    var data = div.text().trim()
-    deferred.resolve(data)
+  return new Promise(function (resolve, reject) {
+    var file = iframe.attr('src')
+    if (!file.match(/\.txt$/)) {
+      return loadAjax(iframe)
+    }
+    iframe.hide()
+    iframe.on('load', function () {
+      var contents = iframe.contents().text().trim()
+      var div = $('<div style="display: none">')
+      div.text(contents)
+      div.insertBefore(iframe)
+      iframe.remove()
+      var data = div.text().trim()
+      resolve(data)
+    })
   })
-  return deferred.promise()
 }
 
 // read contents of file
 function loadFile (file) {
-  var deferred = $.Deferred()
-  $.get(file, function (data) {
-    deferred.resolve(data)
-  }, 'text')
-  return deferred.promise()
+  return new Promise(function (resolve, reject) {
+    $.get(file, resolve, 'text').fail(function () {
+      reject(file)
+    })
+  })
+}
+
+function loadFiles (files) {
+  var file = files.shift()
+  var promise = loadFile(file)
+  files.forEach(function (file) {
+    promise = promise.catch(function () {
+      return loadFile(file)
+    })
+  })
+  return promise
 }
 
 /* eslint-disable no-unused-vars */
 function loadAjax (iframe) {
-  var deferred = $.Deferred()
-  iframe.hide()
-  var src = iframe.attr('src')
-  var div = $('<div style="display: none">')
-  div.insertBefore(iframe)
-  iframe.remove()
-  loadFile(src).then(function (data) {
-    div.text(data)
-    deferred.resolve(data)
+  return new Promise(function (resolve, reject) {
+    iframe.hide()
+    var src = iframe.attr('src')
+    var div = $('<div style="display: none">')
+    div.insertBefore(iframe)
+    iframe.remove()
+    loadFile(src).then(function (data) {
+      div.text(data)
+      resolve(data)
+    })
   })
-  return deferred.promise()
 }
 
 // read Markdown from <iframe> or file and
 // insert the converted HTML into the document
 function loadData () {
-  var file = URI(window.location.href).filename().replace(/\.html$/, '.txt') || 'index.txt'
+  var files = ['index.md', 'index.txt']
+  files.unshift(URI(window.location.href).filename().replace(/\.html$/, '.txt'))
+  files.unshift(URI(window.location.href).filename().replace(/\.html$/, '.md'))
 
   // Markdown has already been loaded once
   var meta = $('meta[name=updated]')
@@ -74023,21 +74038,18 @@ function loadData () {
     loadIframe(iframe).then(convert).then(typeset)
   } else {
     // <body> contains no <iframe>: get file from <link> element
-    // (or default to index.txt)
     var link = $('link[type="text/markdown"]')
     if (link.length > 0) {
-      file = link.attr('href')
+      files.unshift(link.attr('href'))
     }
     // replace <body> with converted data from file
     // loadFile(file).then(convert).then(process).then(typeset)
-    loadFile(file).then(convert).then(typeset)
+    loadFiles(files).then(convert).then(typeset)
   }
 }
 
 $(function () {
   loadData()
-  // alert('url: ' + url())
-  // alert('path: ' + path())
 })
 
 },{"./compile":375,"./util":387,"jquery":274,"md5":358,"urijs":370}],380:[function(require,module,exports){
@@ -74116,6 +74128,10 @@ markdown.md = markdownit({
   .use(emoji)
   .use(mathjax)
   .use(abbr)
+
+markdown.md.renderer.rules.emoji = function (token, idx) {
+  return '<span class="emoji emoji_' + token[idx].markup + '">' + token[idx].content + '</span>'
+}
 
 markdown.inline = function (str) {
   return markdown(str, true)
@@ -74291,7 +74307,7 @@ social.bitbucket.url = function (url) {
     return url
   }
   var bitbucket = 'https://bitbucket.org/epsil/wiki/src/HEAD'
-  var file = 'index.txt'
+  var file = 'index.md'
   return bitbucket + url + file
 }
 
@@ -74317,7 +74333,7 @@ social.bitbucket.history.url = function (url) {
   }
 
   var bitbucket = 'https://bitbucket.org/epsil/wiki/history-node/HEAD'
-  var file = 'index.txt'
+  var file = 'index.md'
   return bitbucket + url + file
 }
 
@@ -74335,7 +74351,7 @@ social.github.history.url = function (url) {
   }
 
   var github = 'https://github.com/epsil/epsil.github.io/commits/master'
-  var file = '/index.txt'
+  var file = '/index.md'
   var path = social.github.path(url)
 
   return github + path + file
@@ -74347,7 +74363,7 @@ social.github.url = function (url) {
   }
 
   var github = 'https://github.com/epsil/epsil.github.io/edit/master'
-  var file = '/index.txt'
+  var file = '/index.md'
   var path = social.github.path(url)
 
   if (path === '') {
@@ -74545,7 +74561,7 @@ var templates = {
     // '<li role="presentation"><a href="{{mail}}" title="{{text mail-title}}"><i class="fa fa-envelope"></i></a></li>\n' +
     '<li role="presentation"><a href="{{bitbucket}}" title="{{text bitbucket-title}}"><i class="fa fa-edit"></i></a></li>\n' +
     '<li role="presentation"><a href="{{history}}" title="{{text history-title}}"><i class="fa fa-history"></i></a></li>\n' +
-    '<li role="presentation"><a href="index.txt" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
+    '<li role="presentation"><a href="index.md" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
     '{{#if toc}}' +
     '<li role="presentation"><a name="toc-button" href="#toc" data-toggle="collapse" title="{{text toc-title}}"><i class="fa fa-list"></i></a></li>\n' +
     '{{/if}}' +

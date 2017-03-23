@@ -129,7 +129,7 @@ function links (view, path) {
 function compile (data, path) {
   var file = URI(path).filename()
   if (file === '') {
-    file = 'index.txt'
+    file = 'index.md'
   }
 
   data = data.trim()

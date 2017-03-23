@@ -17200,7 +17200,7 @@ social.bitbucket.url = function (url) {
     return url
   }
   var bitbucket = 'https://bitbucket.org/epsil/wiki/src/HEAD'
-  var file = 'index.txt'
+  var file = 'index.md'
   return bitbucket + url + file
 }
 
@@ -17226,7 +17226,7 @@ social.bitbucket.history.url = function (url) {
   }
 
   var bitbucket = 'https://bitbucket.org/epsil/wiki/history-node/HEAD'
-  var file = 'index.txt'
+  var file = 'index.md'
   return bitbucket + url + file
 }
 
@@ -17244,7 +17244,7 @@ social.github.history.url = function (url) {
   }
 
   var github = 'https://github.com/epsil/epsil.github.io/commits/master'
-  var file = '/index.txt'
+  var file = '/index.md'
   var path = social.github.path(url)
 
   return github + path + file
@@ -17256,7 +17256,7 @@ social.github.url = function (url) {
   }
 
   var github = 'https://github.com/epsil/epsil.github.io/edit/master'
-  var file = '/index.txt'
+  var file = '/index.md'
   var path = social.github.path(url)
 
   if (path === '') {

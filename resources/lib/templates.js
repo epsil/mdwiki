@@ -109,7 +109,7 @@ var templates = {
     // '<li role="presentation"><a href="{{mail}}" title="{{text mail-title}}"><i class="fa fa-envelope"></i></a></li>\n' +
     '<li role="presentation"><a href="{{bitbucket}}" title="{{text bitbucket-title}}"><i class="fa fa-edit"></i></a></li>\n' +
     '<li role="presentation"><a href="{{history}}" title="{{text history-title}}"><i class="fa fa-history"></i></a></li>\n' +
-    '<li role="presentation"><a href="index.txt" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
+    '<li role="presentation"><a href="index.md" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
     '{{#if toc}}' +
     '<li role="presentation"><a name="toc-button" href="#toc" data-toggle="collapse" title="{{text toc-title}}"><i class="fa fa-list"></i></a></li>\n' +
     '{{/if}}' +

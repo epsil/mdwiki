@@ -153,11 +153,11 @@ function writeReferences (files) {
 }
 
 if (process.argv.length > 2) {
-  var input = process.argv[2] || 'index.txt'
+  var input = process.argv[2] || 'index.md'
   var output = process.argv[3] || htmlfile(input)
   convert(input, output)
 } else {
-  var files = glob.sync('**/index.txt').sort()
+  var files = glob.sync('**/index.md').sort()
   Promise.all(files.map(convertFile)).then(function () {
     writeReferences(files)
   })

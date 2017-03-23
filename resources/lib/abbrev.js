@@ -218,6 +218,8 @@ module.exports =
   '*[Viz.]: Videlicet\n' +
   '*[viz.]: videlicet\n' +
   '*[TL;DR]: Too long; didn\'t read\n' +
+  '*[AS]: aksjeselskap\n' +
+  '*[A/S]: aksjeselskap\n' +
   '*[Bl.a.]: Blant annet\n' +
   '*[bl.a.]: blant annet\n' +
   '*[F.eks.]: For eksempel\n' +

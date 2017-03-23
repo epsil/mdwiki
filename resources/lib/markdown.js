@@ -74,6 +74,10 @@ markdown.md = markdownit({
   .use(mathjax)
   .use(abbr)
 
+markdown.md.renderer.rules.emoji = function (token, idx) {
+  return '<span class="emoji emoji_' + token[idx].markup + '">' + token[idx].content + '</span>'
+}
+
 markdown.inline = function (str) {
   return markdown(str, true)
 }

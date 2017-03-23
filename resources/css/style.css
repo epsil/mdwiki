@@ -563,6 +563,15 @@ s *, s *:before, s *:after {
 .task-list .task-list {
     padding-left: 1.5em;
 }
-.pre {
+
+.nobr {
     white-space: pre;
+}
+
+.emoji_blue_book {
+    color: #42ade2;
+}
+
+.emoji_green_book {
+    color: #83bf4f;
 }
