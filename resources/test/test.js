@@ -17279,10 +17279,6 @@ social.github.edit.url = function (url) {
   var github = 'https://github.com/' + repo + '/edit/master'
   var path = social.github.path(url)
 
-  if (path === '') {
-    return 'https://github.com/' + repo + '/'
-  }
-
   return github + path + '/' + defaults.index
 }
 
@@ -17299,10 +17295,6 @@ social.github.raw.url = function (url) {
   var github = 'https://github.com/' + repo + '/raw/master'
   var path = social.github.path(url)
 
-  if (path === '') {
-    return 'https://github.com/' + repo + '/'
-  }
-
   return github + path + '/' + defaults.index
 }
 
@@ -17314,10 +17306,6 @@ social.github.url = function (url) {
   var repo = defaults['github-repo'] || ''
   var github = 'https://github.com/' + repo + '/blob/master'
   var path = social.github.path(url)
-
-  if (path === '') {
-    return 'https://github.com/' + repo + '/'
-  }
 
   return github + path + '/' + defaults.index
 }
