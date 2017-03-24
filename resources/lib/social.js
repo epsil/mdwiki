@@ -1,5 +1,6 @@
 var $ = require('jquery')
 var URI = require('urijs')
+var defaults = require('./defaults')
 
 var social = {}
 
@@ -11,9 +12,9 @@ social.bitbucket.url = function (url) {
   if (URI(url).protocol() === 'file') {
     return url
   }
-  var bitbucket = 'https://bitbucket.org/epsil/wiki/src/HEAD'
-  var file = 'index.md'
-  return bitbucket + url + file
+  var repo = defaults['bitbucket-repo'] || ''
+  var bitbucket = 'https://bitbucket.org/' + repo + '/src/HEAD'
+  return bitbucket + url + defaults.index
 }
 
 social.bitbucket.resource = function (url) {
@@ -36,10 +37,9 @@ social.bitbucket.history.url = function (url) {
   if (URI(url).protocol() === 'file') {
     return url
   }
-
-  var bitbucket = 'https://bitbucket.org/epsil/wiki/history-node/HEAD'
-  var file = 'index.md'
-  return bitbucket + url + file
+  var repo = defaults['bitbucket-repo'] || ''
+  var bitbucket = 'https://bitbucket.org/' + repo + '/history-node/HEAD'
+  return bitbucket + url + defaults.index
 }
 
 social.github = function () {
@@ -55,11 +55,51 @@ social.github.history.url = function (url) {
     return url
   }
 
-  var github = 'https://github.com/epsil/epsil.github.io/commits/master'
-  var file = '/index.md'
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/commits/master'
   var path = social.github.path(url)
 
-  return github + path + file
+  return github + path + '/' + defaults.index
+}
+
+social.github.edit = function () {
+  return social.github.edit.url(window.location.href)
+}
+
+social.github.edit.url = function (url) {
+  if (URI(url).protocol() === 'file') {
+    return url
+  }
+
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/edit/master'
+  var path = social.github.path(url)
+
+  if (path === '') {
+    return 'https://github.com/' + repo + '/'
+  }
+
+  return github + path + '/' + defaults.index
+}
+
+social.github.raw = function () {
+  return social.github.raw.url(window.location.href)
+}
+
+social.github.raw.url = function (url) {
+  if (URI(url).protocol() === 'file') {
+    return url
+  }
+
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/raw/master'
+  var path = social.github.path(url)
+
+  if (path === '') {
+    return 'https://github.com/' + repo + '/'
+  }
+
+  return github + path + '/' + defaults.index
 }
 
 social.github.url = function (url) {
@@ -67,15 +107,15 @@ social.github.url = function (url) {
     return url
   }
 
-  var github = 'https://github.com/epsil/epsil.github.io/edit/master'
-  var file = '/index.md'
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/blob/master'
   var path = social.github.path(url)
 
   if (path === '') {
-    return 'https://github.com/epsil/epsil.github.io/'
+    return 'https://github.com/' + repo + '/'
   }
 
-  return github + path + file
+  return github + path + '/' + defaults.index
 }
 
 social.github.resource = function (url) {

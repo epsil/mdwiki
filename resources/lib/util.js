@@ -256,14 +256,17 @@ util.fixLinks = function () {
       }
       // set title attribute to summary of target
       target = target.first()
-      var text = target.removeAria().text().trim()
+      var text = target.removeAria().text() || ''
+      text = text.trim()
       link.attr('title', text)
     })
     // fix external links
     body.find('a').each(function () {
       var a = $(this)
-      var text = a.text().trim()
-      var href = a.attr('href').trim()
+      var text = a.text() || ''
+      text = text.trim()
+      var href = a.attr('href') || ''
+      href = href.trim()
       if (href === undefined || href === '') {
         // not a link: do nothing
         return

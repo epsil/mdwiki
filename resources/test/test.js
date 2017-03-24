@@ -16952,7 +16952,23 @@ $.fn.addCollapsibleSections.defaults = collapse.defaults
 
 module.exports = collapse
 
-},{"./util":29,"bootstrap":1,"jquery":14}],24:[function(require,module,exports){
+},{"./util":30,"bootstrap":1,"jquery":14}],24:[function(require,module,exports){
+module.exports = {
+  // author: 'Vegard Øye',
+  // 'author-url': 'https://epsil.github.io/',
+  url: 'http://localhost:8000/',
+  index: 'index.md',
+  compile: false,
+  // 'bitbucket-repo': 'epsil/wiki',
+  'github-repo': 'epsil/wiki',
+  tidy: true,
+  lang: 'no',
+  mathjax: false,
+  toc: true,
+  typogr: true
+}
+
+},{}],25:[function(require,module,exports){
 var $ = require('jquery')
 
 var figure = {}
@@ -17041,7 +17057,7 @@ $.fn.fixFigures = figure.fixFigures
 
 module.exports = figure
 
-},{"jquery":14}],25:[function(require,module,exports){
+},{"jquery":14}],26:[function(require,module,exports){
 var $ = require('jquery')
 
 var punctuation = {}
@@ -17123,7 +17139,7 @@ $.fn.addPunctuation = punctuation.addPunctuation
 
 module.exports = punctuation
 
-},{"jquery":14}],26:[function(require,module,exports){
+},{"jquery":14}],27:[function(require,module,exports){
 // Semantic sections
 //
 // Inspired by Pandoc's --section-divs option:
@@ -17185,9 +17201,10 @@ $.fn.addSections = section.addSections
 
 module.exports = section
 
-},{"./util":29,"jquery":14}],27:[function(require,module,exports){
+},{"./util":30,"jquery":14}],28:[function(require,module,exports){
 var $ = require('jquery')
 var URI = require('urijs')
+var defaults = require('./defaults')
 
 var social = {}
 
@@ -17199,9 +17216,9 @@ social.bitbucket.url = function (url) {
   if (URI(url).protocol() === 'file') {
     return url
   }
-  var bitbucket = 'https://bitbucket.org/epsil/wiki/src/HEAD'
-  var file = 'index.md'
-  return bitbucket + url + file
+  var repo = defaults['bitbucket-repo'] || ''
+  var bitbucket = 'https://bitbucket.org/' + repo + '/src/HEAD'
+  return bitbucket + url + defaults.index
 }
 
 social.bitbucket.resource = function (url) {
@@ -17224,10 +17241,9 @@ social.bitbucket.history.url = function (url) {
   if (URI(url).protocol() === 'file') {
     return url
   }
-
-  var bitbucket = 'https://bitbucket.org/epsil/wiki/history-node/HEAD'
-  var file = 'index.md'
-  return bitbucket + url + file
+  var repo = defaults['bitbucket-repo'] || ''
+  var bitbucket = 'https://bitbucket.org/' + repo + '/history-node/HEAD'
+  return bitbucket + url + defaults.index
 }
 
 social.github = function () {
@@ -17243,11 +17259,51 @@ social.github.history.url = function (url) {
     return url
   }
 
-  var github = 'https://github.com/epsil/epsil.github.io/commits/master'
-  var file = '/index.md'
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/commits/master'
   var path = social.github.path(url)
 
-  return github + path + file
+  return github + path + '/' + defaults.index
+}
+
+social.github.edit = function () {
+  return social.github.edit.url(window.location.href)
+}
+
+social.github.edit.url = function (url) {
+  if (URI(url).protocol() === 'file') {
+    return url
+  }
+
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/edit/master'
+  var path = social.github.path(url)
+
+  if (path === '') {
+    return 'https://github.com/' + repo + '/'
+  }
+
+  return github + path + '/' + defaults.index
+}
+
+social.github.raw = function () {
+  return social.github.raw.url(window.location.href)
+}
+
+social.github.raw.url = function (url) {
+  if (URI(url).protocol() === 'file') {
+    return url
+  }
+
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/raw/master'
+  var path = social.github.path(url)
+
+  if (path === '') {
+    return 'https://github.com/' + repo + '/'
+  }
+
+  return github + path + '/' + defaults.index
 }
 
 social.github.url = function (url) {
@@ -17255,15 +17311,15 @@ social.github.url = function (url) {
     return url
   }
 
-  var github = 'https://github.com/epsil/epsil.github.io/edit/master'
-  var file = '/index.md'
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/blob/master'
   var path = social.github.path(url)
 
   if (path === '') {
-    return 'https://github.com/epsil/epsil.github.io/'
+    return 'https://github.com/' + repo + '/'
   }
 
-  return github + path + file
+  return github + path + '/' + defaults.index
 }
 
 social.github.resource = function (url) {
@@ -17342,7 +17398,7 @@ $.fn.twitter = social.twitter
 
 module.exports = social
 
-},{"jquery":14,"urijs":21}],28:[function(require,module,exports){
+},{"./defaults":24,"jquery":14,"urijs":21}],29:[function(require,module,exports){
 var $ = require('jquery')
 var util = require('./util')
 
@@ -17509,7 +17565,7 @@ $.fn.listOfContents = toc.listOfContents
 
 module.exports = toc
 
-},{"./util":29,"jquery":14}],29:[function(require,module,exports){
+},{"./util":30,"jquery":14}],30:[function(require,module,exports){
 var $ = require('jquery')
 var S = require('string')
 var URI = require('urijs')
@@ -17768,14 +17824,17 @@ util.fixLinks = function () {
       }
       // set title attribute to summary of target
       target = target.first()
-      var text = target.removeAria().text().trim()
+      var text = target.removeAria().text() || ''
+      text = text.trim()
       link.attr('title', text)
     })
     // fix external links
     body.find('a').each(function () {
       var a = $(this)
-      var text = a.text().trim()
-      var href = a.attr('href').trim()
+      var text = a.text() || ''
+      text = text.trim()
+      var href = a.attr('href') || ''
+      href = href.trim()
       if (href === undefined || href === '') {
         // not a link: do nothing
         return
@@ -17895,7 +17954,7 @@ $.fn.removeAriaHidden = util.removeAriaHidden
 
 module.exports = util
 
-},{"jquery":14,"string":18,"urijs":21}],30:[function(require,module,exports){
+},{"jquery":14,"string":18,"urijs":21}],31:[function(require,module,exports){
 /* global describe, it */
 var $ = require('jquery')
 require('../lib/collapse')
@@ -18143,4 +18202,4 @@ describe('util.js', function () {
   })
 })
 
-},{"../lib/collapse":23,"../lib/figure":24,"../lib/punctuation":25,"../lib/section":26,"../lib/social":27,"../lib/toc":28,"../lib/util":29,"jquery":14}]},{},[30]);
+},{"../lib/collapse":23,"../lib/figure":25,"../lib/punctuation":26,"../lib/section":27,"../lib/social":28,"../lib/toc":29,"../lib/util":30,"jquery":14}]},{},[31]);

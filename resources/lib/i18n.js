@@ -7,9 +7,11 @@ module.exports = {
     'twitter-title': 'Del på Twitter',
     'linkedin-title': 'Del på LinkedIn',
     'mail-title': 'Del på e-post',
-    'bitbucket-title': 'Rediger på BitBucket',
-    'github-title': 'Rediger på GitHub',
-    'history-title': 'Vis historie',
+    'bitbucket-repo-title': 'Rediger på BitBucket',
+    'bitbucket-history-title': 'Vis historie på BitBucket',
+    'github-repo-title': 'Vis på GitHub',
+    'github-edit-title': 'Rediger på GitHub',
+    'github-history-title': 'Vis historie på GitHub',
     'markdown-title': 'Vis Markdown-kilde'
   },
   'en': {
@@ -20,9 +22,11 @@ module.exports = {
     'twitter-title': 'Share on Twitter',
     'linkedin-title': 'Share on LinkedIn',
     'mail-title': 'Share by mail',
-    'bitbucket-title': 'Edit on BitBucket',
-    'github-title': 'Edit on GitHub',
-    'history-title': 'View history',
+    'bitbucket-repo-title': 'Edit on BitBucket',
+    'bitbucket-history-title': 'View history on BitBucket',
+    'github-repo-title': 'View on GitHub',
+    'github-edit-title': 'Edit on GitHub',
+    'github-history-title': 'View history on GitHub',
     'markdown-title': 'Get Markdown source'
   }
 }

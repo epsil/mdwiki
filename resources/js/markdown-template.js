@@ -73612,10 +73612,13 @@ function addI18n (view) {
 
 function dynamic (view, path) {
   view = $.extend({
-    bitbucket: social.bitbucket.url(path),
+    'bitbucket': social.bitbucket.url(path),
+    'bitbucket-history': social.bitbucket.history.url(path),
     facebook: social.facebook.url(path),
-    github: social.github.url(path),
-    history: social.bitbucket.history.url(path),
+    'github': social.github.url(path),
+    'github-edit': social.github.edit.url(path),
+    'github-history': social.github.history.url(path),
+    'github-raw': social.github.raw.url(path),
     linkedin: social.linkedin.url(path),
     twitter: social.twitter.url(path),
     mail: social.mail.url(path)
@@ -73739,6 +73742,12 @@ module.exports = compile
 module.exports = {
   // author: 'Vegard Øye',
   // 'author-url': 'https://epsil.github.io/',
+  url: 'http://localhost:8000/',
+  index: 'index.md',
+  compile: false,
+  // 'bitbucket-repo': 'epsil/wiki',
+  'github-repo': 'epsil/wiki',
+  tidy: true,
   lang: 'no',
   mathjax: false,
   toc: true,
@@ -73844,9 +73853,11 @@ module.exports = {
     'twitter-title': 'Del på Twitter',
     'linkedin-title': 'Del på LinkedIn',
     'mail-title': 'Del på e-post',
-    'bitbucket-title': 'Rediger på BitBucket',
-    'github-title': 'Rediger på GitHub',
-    'history-title': 'Vis historie',
+    'bitbucket-repo-title': 'Rediger på BitBucket',
+    'bitbucket-history-title': 'Vis historie på BitBucket',
+    'github-repo-title': 'Vis på GitHub',
+    'github-edit-title': 'Rediger på GitHub',
+    'github-history-title': 'Vis historie på GitHub',
     'markdown-title': 'Vis Markdown-kilde'
   },
   'en': {
@@ -73857,9 +73868,11 @@ module.exports = {
     'twitter-title': 'Share on Twitter',
     'linkedin-title': 'Share on LinkedIn',
     'mail-title': 'Share by mail',
-    'bitbucket-title': 'Edit on BitBucket',
-    'github-title': 'Edit on GitHub',
-    'history-title': 'View history',
+    'bitbucket-repo-title': 'Edit on BitBucket',
+    'bitbucket-history-title': 'View history on BitBucket',
+    'github-repo-title': 'View on GitHub',
+    'github-edit-title': 'Edit on GitHub',
+    'github-history-title': 'View history on GitHub',
     'markdown-title': 'Get Markdown source'
   }
 }
@@ -74295,6 +74308,7 @@ module.exports = section
 },{"./util":387,"jquery":274}],384:[function(require,module,exports){
 var $ = require('jquery')
 var URI = require('urijs')
+var defaults = require('./defaults')
 
 var social = {}
 
@@ -74306,9 +74320,9 @@ social.bitbucket.url = function (url) {
   if (URI(url).protocol() === 'file') {
     return url
   }
-  var bitbucket = 'https://bitbucket.org/epsil/wiki/src/HEAD'
-  var file = 'index.md'
-  return bitbucket + url + file
+  var repo = defaults['bitbucket-repo'] || ''
+  var bitbucket = 'https://bitbucket.org/' + repo + '/src/HEAD'
+  return bitbucket + url + defaults.index
 }
 
 social.bitbucket.resource = function (url) {
@@ -74331,10 +74345,9 @@ social.bitbucket.history.url = function (url) {
   if (URI(url).protocol() === 'file') {
     return url
   }
-
-  var bitbucket = 'https://bitbucket.org/epsil/wiki/history-node/HEAD'
-  var file = 'index.md'
-  return bitbucket + url + file
+  var repo = defaults['bitbucket-repo'] || ''
+  var bitbucket = 'https://bitbucket.org/' + repo + '/history-node/HEAD'
+  return bitbucket + url + defaults.index
 }
 
 social.github = function () {
@@ -74350,11 +74363,51 @@ social.github.history.url = function (url) {
     return url
   }
 
-  var github = 'https://github.com/epsil/epsil.github.io/commits/master'
-  var file = '/index.md'
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/commits/master'
   var path = social.github.path(url)
 
-  return github + path + file
+  return github + path + '/' + defaults.index
+}
+
+social.github.edit = function () {
+  return social.github.edit.url(window.location.href)
+}
+
+social.github.edit.url = function (url) {
+  if (URI(url).protocol() === 'file') {
+    return url
+  }
+
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/edit/master'
+  var path = social.github.path(url)
+
+  if (path === '') {
+    return 'https://github.com/' + repo + '/'
+  }
+
+  return github + path + '/' + defaults.index
+}
+
+social.github.raw = function () {
+  return social.github.raw.url(window.location.href)
+}
+
+social.github.raw.url = function (url) {
+  if (URI(url).protocol() === 'file') {
+    return url
+  }
+
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/raw/master'
+  var path = social.github.path(url)
+
+  if (path === '') {
+    return 'https://github.com/' + repo + '/'
+  }
+
+  return github + path + '/' + defaults.index
 }
 
 social.github.url = function (url) {
@@ -74362,15 +74415,15 @@ social.github.url = function (url) {
     return url
   }
 
-  var github = 'https://github.com/epsil/epsil.github.io/edit/master'
-  var file = '/index.md'
+  var repo = defaults['github-repo'] || ''
+  var github = 'https://github.com/' + repo + '/blob/master'
   var path = social.github.path(url)
 
   if (path === '') {
-    return 'https://github.com/epsil/epsil.github.io/'
+    return 'https://github.com/' + repo + '/'
   }
 
-  return github + path + file
+  return github + path + '/' + defaults.index
 }
 
 social.github.resource = function (url) {
@@ -74449,7 +74502,7 @@ $.fn.twitter = social.twitter
 
 module.exports = social
 
-},{"jquery":274,"urijs":370}],385:[function(require,module,exports){
+},{"./defaults":376,"jquery":274,"urijs":370}],385:[function(require,module,exports){
 var Handlebars = require('handlebars')
 var moment = require('moment')
 var markdown = require('./markdown')
@@ -74559,9 +74612,20 @@ var templates = {
     '<li role="presentation"><a href="{{twitter}}" title="{{text twitter-title}}"><i class="fa fa-twitter-square"></i></a></li>\n' +
     // '<li role="presentation"><a href="{{linkedin}}" title="{{text linkedin-title}}"><i class="fa fa-linkedin-square"></i></a></li>\n' +
     // '<li role="presentation"><a href="{{mail}}" title="{{text mail-title}}"><i class="fa fa-envelope"></i></a></li>\n' +
-    '<li role="presentation"><a href="{{bitbucket}}" title="{{text bitbucket-title}}"><i class="fa fa-edit"></i></a></li>\n' +
-    '<li role="presentation"><a href="{{history}}" title="{{text history-title}}"><i class="fa fa-history"></i></a></li>\n' +
+    '{{#if github-repo}}' +
+    '<li role="presentation"><a href="{{github}}" title="{{text github-repo-title}}"><i class="fa fa-github"></i></a></li>\n' +
+    '<li role="presentation"><a href="{{github-edit}}" title="{{text github-edit-title}}"><i class="fa fa-edit"></i></a></li>\n' +
+    // '<li role="presentation"><a href="{{github-history}}" title="{{text github-history-title}}"><i class="fa fa-history"></i></a></li>\n' +
+    '<li role="presentation"><a href="{{github-raw}}" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
+    '{{else}}' +
+    '{{#if bitbucket-repo}}' +
+    '<li role="presentation"><a href="{{bitbucket}}" title="{{text bitbucket-repo-title}}"><i class="fa fa-edit"></i></a></li>\n' +
+    '<li role="presentation"><a href="{{bitbucket-history}}" title="{{text bitbucket-history-title}}"><i class="fa fa-history"></i></a></li>\n' +
     '<li role="presentation"><a href="index.md" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
+    '{{else}}' +
+    '<li role="presentation"><a href="index.md" title="{{text markdown-title}}"><i class="fa fa-download"></i></a></li>\n' +
+    '{{/if}}' +
+    '{{/if}}' +
     '{{#if toc}}' +
     '<li role="presentation"><a name="toc-button" href="#toc" data-toggle="collapse" title="{{text toc-title}}"><i class="fa fa-list"></i></a></li>\n' +
     '{{/if}}' +
@@ -75068,14 +75132,17 @@ util.fixLinks = function () {
       }
       // set title attribute to summary of target
       target = target.first()
-      var text = target.removeAria().text().trim()
+      var text = target.removeAria().text() || ''
+      text = text.trim()
       link.attr('title', text)
     })
     // fix external links
     body.find('a').each(function () {
       var a = $(this)
-      var text = a.text().trim()
-      var href = a.attr('href').trim()
+      var text = a.text() || ''
+      text = text.trim()
+      var href = a.attr('href') || ''
+      href = href.trim()
       if (href === undefined || href === '') {
         // not a link: do nothing
         return

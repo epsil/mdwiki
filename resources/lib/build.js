@@ -10,8 +10,7 @@ var tidy = require('tidy-html5').tidy_html5
 var glob = require('glob')
 var compile = require('./compile')
 var markdown = require('./markdown')
-
-var site = 'http://localhost:8000/'
+var defaults = require('./defaults')
 
 // simple filename -> URL mapping
 function location (file) {
@@ -24,7 +23,7 @@ function location (file) {
 function url (file) {
   file = location(file)
   file = file.replace(/^\//g, '')
-  file = site + file
+  file = defaults.url + file
   return file
 }
 
@@ -90,9 +89,15 @@ function convert (input, output) {
       if (err) {
         reject(err)
       } else {
-        data = data ? data.toString() : ''
-        var html = compile('', url(input))
-        html = format(html)
+        if (defaults.compile) {
+          data = data ? data.toString() : ''
+        } else {
+          data = ''
+        }
+        var html = compile(data, url(input))
+        if (defaults.tidy) {
+          html = format(html)
+        }
         fs.writeFile(output, html, function (err) {
           if (err) {
             reject(err)
@@ -153,11 +158,11 @@ function writeReferences (files) {
 }
 
 if (process.argv.length > 2) {
-  var input = process.argv[2] || 'index.md'
+  var input = process.argv[2] || defaults.index
   var output = process.argv[3] || htmlfile(input)
   convert(input, output)
 } else {
-  var files = glob.sync('**/index.md').sort()
+  var files = glob.sync('**/' + defaults.index).sort()
   Promise.all(files.map(convertFile)).then(function () {
     writeReferences(files)
   })
