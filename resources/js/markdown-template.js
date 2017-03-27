@@ -73999,9 +73999,17 @@ function loadIframe (iframe) {
 // read contents of file
 function loadFile (file) {
   return new Promise(function (resolve, reject) {
-    $.get(file, resolve, 'text').fail(function () {
+    $.get({
+      url: file,
+      success: resolve,
+      dataType: 'text',
+      cache: false
+    }).fail(function () {
       reject(file)
     })
+    // $.get(file, resolve, 'text').fail(function () {
+    //   reject(file)
+    // })
   })
 }
 
