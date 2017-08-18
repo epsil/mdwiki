@@ -30,7 +30,7 @@ One of several benefits of the above file structure is that the whole wiki can b
 
 The wiki can also be served locally. To do this, run `npm run http` (requires [Node](http://nodejs.org/)).
 
-One can also open the `index.html` files directly from disk, without starting up an HTTP server first. Unfortunately, this only works in Firefox; other browsers impose limits on [resource sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing), and therefore require that an HTTP server is running.
+One can also open the `index.html` files directly from disk, without starting up a web server first. Unfortunately, this only works in Firefox; other browsers impose limits on [resource sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing), and therefore require that a web server is running.
 
 Versioning
 ----------
