@@ -123,7 +123,7 @@ Then one can reference them with a Markdown link:
 [PDF document](document.pdf)
 ```
 
-Thus, the wiki can serve as a repository not only for Markdown documents, but for files in general.
+Thus, the wiki can serve as a repository not only for Markdown documents, but for any kind of file that is related to the page's subject.
 
 Future compatibility
 --------------------
