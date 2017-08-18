@@ -18645,8 +18645,7 @@ inst.Visitor = _handlebarsCompilerVisitor2['default'];
 inst['default'] = inst;
 
 exports['default'] = inst;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"./handlebars.runtime":69,"./handlebars/compiler/ast":71,"./handlebars/compiler/base":72,"./handlebars/compiler/compiler":74,"./handlebars/compiler/javascript-compiler":76,"./handlebars/compiler/visitor":79,"./handlebars/no-conflict":93}],69:[function(require,module,exports){
 'use strict';
@@ -18713,8 +18712,7 @@ _handlebarsNoConflict2['default'](inst);
 inst['default'] = inst;
 
 exports['default'] = inst;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"./handlebars/base":70,"./handlebars/exception":83,"./handlebars/no-conflict":93,"./handlebars/runtime":94,"./handlebars/safe-string":95,"./handlebars/utils":96}],70:[function(require,module,exports){
 'use strict';
@@ -18819,8 +18817,7 @@ var log = _logger2['default'].log;
 
 exports.log = log;
 exports.createFrame = _utils.createFrame;
-exports.logger = _logger2['default'];
-
+exports.logger = _logger2['default'];
 
 },{"./decorators":81,"./exception":83,"./helpers":84,"./logger":92,"./utils":96}],71:[function(require,module,exports){
 'use strict';
@@ -18852,8 +18849,7 @@ var AST = {
 // Must be exported as an object rather than the root of the module as the jison lexer
 // must modify the object to operate properly.
 exports['default'] = AST;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{}],72:[function(require,module,exports){
 'use strict';
@@ -18902,8 +18898,7 @@ function parse(input, options) {
 
   var strip = new _whitespaceControl2['default'](options);
   return strip.accept(_parser2['default'].parse(input));
-}
-
+}
 
 },{"../utils":96,"./helpers":75,"./parser":77,"./whitespace-control":80}],73:[function(require,module,exports){
 /* global define */
@@ -19070,8 +19065,7 @@ CodeGen.prototype = {
 };
 
 exports['default'] = CodeGen;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../utils":96,"source-map":98}],74:[function(require,module,exports){
 /* eslint-disable new-cap */
@@ -19644,8 +19638,7 @@ function transformLiteralToPath(sexpr) {
       loc: literal.loc
     };
   }
-}
-
+}
 
 },{"../exception":83,"../utils":96,"./ast":71}],75:[function(require,module,exports){
 'use strict';
@@ -19876,8 +19869,7 @@ function preparePartialBlock(open, program, close, locInfo) {
     closeStrip: close && close.strip,
     loc: this.locInfo(locInfo)
   };
-}
-
+}
 
 },{"../exception":83}],76:[function(require,module,exports){
 'use strict';
@@ -21004,8 +20996,7 @@ function strictLookup(requireTerminal, compiler, parts, type) {
 }
 
 exports['default'] = JavaScriptCompiler;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../base":70,"../exception":83,"../utils":96,"./code-gen":73}],77:[function(require,module,exports){
 /* istanbul ignore next */
@@ -21744,8 +21735,7 @@ var handlebars = (function () {
     }Parser.prototype = parser;parser.Parser = Parser;
     return new Parser();
 })();exports.__esModule = true;
-exports['default'] = handlebars;
-
+exports['default'] = handlebars;
 
 },{}],78:[function(require,module,exports){
 /* eslint-disable new-cap */
@@ -21932,8 +21922,7 @@ PrintVisitor.prototype.Hash = function (hash) {
 PrintVisitor.prototype.HashPair = function (pair) {
   return pair.key + '=' + this.accept(pair.value);
 };
-/* eslint-enable new-cap */
-
+/* eslint-enable new-cap */
 
 },{"./visitor":79}],79:[function(require,module,exports){
 'use strict';
@@ -22074,8 +22063,7 @@ function visitPartial(partial) {
 }
 
 exports['default'] = Visitor;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../exception":83}],80:[function(require,module,exports){
 'use strict';
@@ -22297,8 +22285,7 @@ function omitLeft(body, i, multiple) {
 }
 
 exports['default'] = WhitespaceControl;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"./visitor":79}],81:[function(require,module,exports){
 'use strict';
@@ -22315,8 +22302,7 @@ var _decoratorsInline2 = _interopRequireDefault(_decoratorsInline);
 
 function registerDefaultDecorators(instance) {
   _decoratorsInline2['default'](instance);
-}
-
+}
 
 },{"./decorators/inline":82}],82:[function(require,module,exports){
 'use strict';
@@ -22346,8 +22332,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../utils":96}],83:[function(require,module,exports){
 'use strict';
@@ -22388,8 +22373,7 @@ function Exception(message, node) {
 Exception.prototype = new Error();
 
 exports['default'] = Exception;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{}],84:[function(require,module,exports){
 'use strict';
@@ -22436,8 +22420,7 @@ function registerDefaultHelpers(instance) {
   _helpersLog2['default'](instance);
   _helpersLookup2['default'](instance);
   _helpersWith2['default'](instance);
-}
-
+}
 
 },{"./helpers/block-helper-missing":85,"./helpers/each":86,"./helpers/helper-missing":87,"./helpers/if":88,"./helpers/log":89,"./helpers/lookup":90,"./helpers/with":91}],85:[function(require,module,exports){
 'use strict';
@@ -22477,8 +22460,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../utils":96}],86:[function(require,module,exports){
 'use strict';
@@ -22573,8 +22555,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../exception":83,"../utils":96}],87:[function(require,module,exports){
 'use strict';
@@ -22600,8 +22581,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../exception":83}],88:[function(require,module,exports){
 'use strict';
@@ -22631,8 +22611,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../utils":96}],89:[function(require,module,exports){
 'use strict';
@@ -22659,8 +22638,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{}],90:[function(require,module,exports){
 'use strict';
@@ -22673,8 +22651,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{}],91:[function(require,module,exports){
 'use strict';
@@ -22708,8 +22685,7 @@ exports['default'] = function (instance) {
   });
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"../utils":96}],92:[function(require,module,exports){
 'use strict';
@@ -22757,8 +22733,7 @@ var logger = {
 };
 
 exports['default'] = logger;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{"./utils":96}],93:[function(require,module,exports){
 (function (global){
@@ -22780,8 +22755,7 @@ exports['default'] = function (Handlebars) {
   };
 };
 
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],94:[function(require,module,exports){
@@ -23075,8 +23049,7 @@ function executeDecorators(fn, prog, container, depths, data, blockParams) {
     Utils.extend(prog, props);
   }
   return prog;
-}
-
+}
 
 },{"./base":70,"./exception":83,"./utils":96}],95:[function(require,module,exports){
 // Build out our basic SafeString type
@@ -23092,8 +23065,7 @@ SafeString.prototype.toString = SafeString.prototype.toHTML = function () {
 };
 
 exports['default'] = SafeString;
-module.exports = exports['default'];
-
+module.exports = exports['default'];
 
 },{}],96:[function(require,module,exports){
 'use strict';
@@ -23218,8 +23190,7 @@ function blockParams(params, ids) {
 
 function appendContextPath(contextPath, id) {
   return (contextPath ? contextPath + '.' : '') + id;
-}
-
+}
 
 },{}],97:[function(require,module,exports){
 // USAGE:
@@ -74007,9 +73978,6 @@ function loadFile (file) {
     }).fail(function () {
       reject(file)
     })
-    // $.get(file, resolve, 'text').fail(function () {
-    //   reject(file)
-    // })
   })
 }
 
@@ -74250,7 +74218,8 @@ module.exports = punctuation
 },{"jquery":274}],382:[function(require,module,exports){
 module.exports =
   '[Another page]: /anotherpage/ "Another page"\n' +
-  '[A page]: / "A page"\n'
+  '[A page]: / "A page"\n' +
+  '[Another page]: /page/ "Another page"\n'
 },{}],383:[function(require,module,exports){
 // Semantic sections
 //
