@@ -34,7 +34,7 @@ It is optional, but highly recommended, to set up a remote repository for the wi
 Editing
 -------
 
-A wiki page is edited by opening its `index.md` file in a text editor, making changes, and committing them with Git. A shorthand command for this is `npm run commit`. To synchronize the changes, one use `npm run push`. One can also use standard Git commands (`git commit` and `git push`) for the same task.
+A wiki page is edited by opening its `index.md` file in a text editor, making changes, and committing them with Git. A shorthand command for this is `npm run commit` (requires [Node](http://nodejs.org/)). To synchronize the changes, one can use `npm run push`. One can also use standard Git commands (`git commit` and `git push`) for the same task.
 
 The wiki can be edited online simply by hosting the repository at GitHub, BitBucket or a similar service. These websites lets one edit Markdown files via a web interface.
 
@@ -61,7 +61,7 @@ Styling
 
 By default, the wiki uses [Bootstrap](http://getbootstrap.com/) to provide responsive CSS styling.
 
-One can add custom CSS styling to a page by adding a stylesheet file in the page's directory:
+One can add custom CSS styling to a page by adding a stylesheet file to the page's directory:
 
     .
     `-- page
@@ -69,7 +69,7 @@ One can add custom CSS styling to a page by adding a stylesheet file in the page
         |-- index.html
         `-- style.css
 
-Then reference the stylesheet file in the page's metadata block:
+Then reference the file in the page's metadata block:
 
 ```yaml
 ---
@@ -101,4 +101,4 @@ Future compatibility
 
 Markdown is a light-weight markdown language, and Markdown files are plain text. As such, they are human readable.
 
-Markdown can also be converted to a host of other formats with [Pandoc](http://pandoc.org/), whether to other markup languages or more conventional formats like Microsoft Word.
+Markdown can also be converted to a host of other formats with [Pandoc](http://pandoc.org/), whether to other markup languages or to more conventional formats like Microsoft Word.
