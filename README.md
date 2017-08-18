@@ -18,7 +18,7 @@ The wiki has the following file structure:
         |-- index.md
         `-- index.html
 
-Every page has its own folder, and folders can be arbitrarily nested. The page's contents are stored in a Markdown file named `index.md`. There is also an associated `index.html` file, which uses JavaScript to render the Markdown as HTML when opened in a browser.
+Every page has its own folder, and folders can be arbitrarily nested. The page's contents are stored in a Markdown file named `index.md`. There is also an associated `index.html` file, which uses a bit of JavaScript to dynamically render the Markdown as HTML when viewed in a browser.
 
 One of several benefits of the above file structure is that the whole wiki can be served by a web server, and every wiki page gets its own URL. If the wiki is placed in the server's root directory (any directory will do), the addresses become:
 
