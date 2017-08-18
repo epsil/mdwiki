@@ -20,7 +20,15 @@ The wiki has the following file structure:
 
 Every page has its own folder, and folders can be nested. The page's contents are stored in a Markdown file named `index.md`. There is also an associated `index.html` file, which uses JavaScript to render the Markdown as HTML when opened in a browser.
 
-One of several benefits of this file structure is that the whole wiki can be served as a web page: upload it anywhere, or serve it locally. To do the latter, run `npm run http`.
+One of several benefits of this file structure is that the whole wiki can be served as a web page. Every page gets its own URL:
+
+| URL | Page |
+| --- | ---- |
+| `/` | root |
+| `/page/` | page |
+| `/anotherpage/` | anotherpage |
+
+Simply upload the wiki to a server, or serve it locally. To do the latter, run `npm run http`.
 
 One can also open `index.html` files directly from disk, although this only works in Firefox; other browsers require a HTTP server running.
 
