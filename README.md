@@ -128,6 +128,6 @@ Thus, the wiki can serve as a repository not only for Markdown documents, but fo
 Future compatibility
 --------------------
 
-Markdown is a light-weight markdown language, and Markdown files are plain text. As such, they are human readable.
+Markdown is a light-weight markdown language, and Markdown files are plain text. As such, they are human readable, easy to work with, and future-proof.
 
 Markdown can also be converted to a host of other formats with [Pandoc](http://pandoc.org/), whether to other markup languages or to more conventional formats like Microsoft Word.
