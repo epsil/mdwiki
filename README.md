@@ -28,7 +28,7 @@ One of several benefits of the above file structure is that the whole wiki can b
 | `/page/` | page |
 | `/anotherpage/` | anotherpage |
 
-The wiki can also be served locally. To do this, run `npm run http`.
+The wiki can also be served locally. To do this, run `npm run http` (requires [Node](http://nodejs.org/)).
 
 One can also open the `index.html` files directly from disk, without starting up an HTTP server first. Unfortunately, this only works in Firefox; other browsers impose limits on [resource sharing](http://en.wikipedia.org/wiki/Cross-origin_resource_sharing), and therefore require that a HTTP server is running.
 
@@ -42,7 +42,7 @@ It is optional, but highly recommended, to set up a remote repository for the wi
 Editing
 -------
 
-A wiki page is edited by opening its `index.md` file in a text editor, making changes, and committing them with Git. A shorthand command for this is `npm run commit` (requires [Node](http://nodejs.org/)). To synchronize the changes, one can use `npm run push`. One can also use standard Git commands (`git commit` and `git push`) for the same task.
+A wiki page is edited by opening its `index.md` file in a text editor, making changes, and committing them with Git. A shorthand command for this is `npm run commit`. To synchronize the changes, one can use `npm run push`. One can also use standard Git commands (`git commit` and `git push`) for the same task.
 
 The wiki can be edited online simply by hosting the repository at GitHub, BitBucket or a similar service. These websites lets one edit Markdown files via a user-friendly web interface.
 
