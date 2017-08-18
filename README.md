@@ -51,7 +51,7 @@ Markup
 
 The wiki is written in Markdown ([Pandoc flavor](http://pandoc.org/MANUAL.html#pandocs-markdown)).
 
-The wiki supports [metadata](http://pandoc.org/MANUAL.html#metadata-blocks) in the form of a YAML block:
+The wiki supports [metadata](http://pandoc.org/MANUAL.html#metadata-blocks) in the form of an initial YAML block:
 
 ```markdown
 ---
