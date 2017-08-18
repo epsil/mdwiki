@@ -106,6 +106,25 @@ Then reference it with the standard Markdown image syntax:
 
 It is possible to reference images from anywhere, but it is good practice to bundle them together with the relevant page.
 
+Other files
+-----------
+
+In the same way, one can bundle all kinds of files in a page's directory:
+
+    .
+    `-- page
+        |-- index.md
+        |-- index.html
+        `-- document.pdf
+
+Then one can reference them with a Markdown link:
+
+```markdown
+[PDF document](document.pdf)
+```
+
+Thus, the wiki can serve as a repository not only for Markdown documents, but for files in general.
+
 Future compatibility
 --------------------
 
