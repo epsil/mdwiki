@@ -37,7 +37,7 @@ Versioning
 
 The wiki uses [Git](https://git-scm.com/) to keep track of changes. The wiki is a regular Git repository, and standard Git commands work as one would expect.
 
-It is optional, but highly recommended, to set up a remote repository for the wiki.
+It is optional, but highly recommended, to set up a remote repository for the wiki (`git remote`). Then one can back up the wiki and synchronize it across machines with `git push` and `git pull`.
 
 Editing
 -------
