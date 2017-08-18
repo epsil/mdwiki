@@ -104,6 +104,8 @@ Then reference it with the standard Markdown image syntax:
 ![](image.jpg)
 ```
 
+It is possible to reference images from anywhere, but it is good practice to bundle them together with the relevant page.
+
 Future compatibility
 --------------------
 
