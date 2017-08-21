@@ -39,6 +39,13 @@ The wiki uses [Git](https://git-scm.com/) to keep track of changes. The wiki is 
 
 It is optional, but highly recommended, to set up a remote repository for the wiki (`git remote`). Then one can back up the wiki and synchronize it across machines with `git push` and `git pull`.
 
+Searching
+---------
+
+Since Markdown files are plain text, the wiki is easily searchable. A `grep` command for finding the string `markdown` would be:
+
+    grep -Ri --exclude-dir="node_modules" --exclude-dir="resources" --include="*.md" "markdown" .
+
 Editing
 -------
 
