@@ -49,9 +49,9 @@ Since Markdown files are plain text, the wiki is easily searchable. A `grep` com
 
     grep -Ri --exclude-dir="node_modules" --exclude-dir="resources" --include="*.md" "markdown" .
 
-A shorthand for the above is `npm run grep`. Thus, to search for `markdown`:
+A shorthand for the above is `npm run search`. Thus, to search for `markdown`:
 
-    npm run grep markdown
+    npm run search markdown
 
 Editing
 -------
