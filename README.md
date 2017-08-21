@@ -20,6 +20,9 @@ The wiki has the following file structure:
 
 Every page has its own folder, and folders can be arbitrarily nested. The page's contents are stored in a Markdown file named `index.md`. There is also an associated `index.html` file, which uses a bit of JavaScript to dynamically render the Markdown as HTML when viewed in a browser.
 
+Web server
+----------
+
 One of several benefits of the above file structure is that the whole wiki can be served by a web server, and every wiki page gets its own URL. If the wiki is uploaded to the server's root directory (any directory will do), the addresses become:
 
 | URL | Page |
@@ -46,6 +49,10 @@ Since Markdown files are plain text, the wiki is easily searchable. A `grep` com
 
     grep -Ri --exclude-dir="node_modules" --exclude-dir="resources" --include="*.md" "markdown" .
 
+A shorthand for the above is `npm run grep`. Thus, to search for `markdown`:
+
+    npm run grep markdown
+
 Editing
 -------
 
@@ -69,7 +76,7 @@ author: Page author
 This is a page written in **Markdown**.
 ```
 
-The wiki uses [markdown-it](https://www.npmjs.com/package/markdown-it) for its Markdown parser, which is customizable with extensions.
+The wiki uses [markdown-it](https://www.npmjs.com/package/markdown-it) for its Markdown parser, which is customizable with extensions. Thus, the wiki can accommodate a number of extensions to plain Markdown syntax, such as [MathJax](https://www.npmjs.com/package/markdown-it-mathjax) markup.
 
 Styling
 -------
@@ -130,7 +137,7 @@ Then one can reference them with a Markdown link:
 [PDF document](document.pdf)
 ```
 
-Thus, the wiki can serve as a repository not only for Markdown documents, but for any kind of file that is related to the page's subject.
+Thus, the wiki can serve as a repository not only for Markdown documents, but for any kind of file that is related to the subject.
 
 Future compatibility
 --------------------
