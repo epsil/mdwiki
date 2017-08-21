@@ -56,7 +56,7 @@ A shorthand for the above is `npm run search`. Thus, to search for `markdown`:
 Editing
 -------
 
-A wiki page is edited by opening its `index.md` file in a text editor, making changes, and committing them with Git. A shorthand command for this is `npm run commit`. To synchronize the changes, one can use `npm run push`. One can also use standard Git commands (`git commit` and `git push`) for the same task.
+A wiki page is edited by opening its `index.md` file in a text editor, making changes, and committing them with Git. A shorthand command for this is `npm run commit`. To synchronize the changes, one can use `npm run push`. One can also use standard Git commands (`git commit` and `git push`) for the same tasks.
 
 The wiki can be edited online simply by hosting the repository at GitHub, BitBucket or a similar service. These websites lets one edit Markdown files with a user-friendly web interface.
 
