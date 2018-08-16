@@ -1,0 +1,63 @@
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Arial Unicode", "Segoe UI", Avenir, "Avenir Next", sans-serif !important;
+    font-size: 100% !important;
+    font-variant: normal;
+}
+
+a, a:hover {
+    border: none;
+    color: rgb(51, 122, 183);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+code, kbd, samp, tt, pre {
+    border-radius: 3px;
+    font-size: 0.9em !important;
+}
+
+code, kbd, samp, tt {
+    background-color: rgb(249, 242, 244);
+    color: rgb(199, 37, 78);
+}
+
+pre {
+    border: 1px solid rgb(204, 204, 204);
+    padding: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit !important;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-weight: normal;
+}
+
+h5 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: italic;
+}

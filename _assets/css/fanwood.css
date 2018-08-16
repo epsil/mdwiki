@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Fanwood+Text:400,400italic");
+
+body {
+    font-family: "Fanwood Text", "Adobe Garamond Pro", "Garamond Premier Pro", "ITC Garamond Std", Garamond, Baskerville, "Baskerville Old Face", "Crimson Text", Crimson, "Iowan Old Style", Iowan, "Iowan Web", Georgia, Charter, "Hoefler Text", "Calisto MT", Constantia, Andalus, Centaur, Cambria, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
+    font-size: 140% !important;
+    line-height: 1.3;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit !important;
+}
+
+code, kbd, samp, tt, pre {
+    font-size: 0.7em !important;
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 135% !important;
+    }
+}

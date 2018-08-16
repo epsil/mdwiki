@@ -1,0 +1,105 @@
+.indent hr {
+    display: none;
+}
+
+.indent hr + hr {
+    display: block;
+}
+
+.indent hr.footnotes-sep {
+    display: block;
+}
+
+body .indent p {
+    margin: 0;
+}
+
+.indent hr + p,
+.indent hr + .sidenote + p,
+.indent hr + .sidenote + .sidenote + p,
+.indent hr + .sidenote + .sidenote + .sidenote + p,
+.indent hr + .sidenote + .sidenote + .sidenote + .sidenote + p,
+.indent hr + .sidenote + .sidenote + .sidenote + .sidenote + .sidenote + p {
+    margin-top: 1em;
+}
+
+.indent p + p,
+.indent p + .pull-quote + p,
+.indent p + .sidenote + p,
+.indent p + .sidenote + .sidenote + p,
+.indent p + .sidenote + .sidenote + .sidenote + p,
+.indent p + .sidenote + .sidenote + .sidenote + .sidenote + p,
+.indent p + .sidenote + .sidenote + .sidenote + .sidenote + .sidenote + p {
+    text-indent: 1.3em !important;
+}
+
+.indent p.text-center {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.indent p.text-center + p {
+    text-indent: 0 !important;
+}
+
+.indent p, .indent p.p-summary {
+    text-indent: 0 !important;
+    margin: 1.3em 0 0 0;
+}
+
+.indent p + ol, .indent p + ul,
+.indent p + aside + ol, .indent p + aside + ul,
+.indent p + aside + aside + ol, .indent p + aside + aside + ul {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.indent blockquote, .indent pre {
+    background: inherit;
+    border: none;
+    /* margin-left: 2.6em; */
+    margin-left: 1.3em;
+    padding: 0;
+}
+
+.indent blockquote blockquote {
+    margin-left: 1.3em;
+}
+
+.indent pre {
+    margin-left: 3.4em;
+}
+
+.indent code, .indent .kbd, .indent samp, .indent tt {
+    background: inherit;
+    padding: 0;
+}
+
+.indent code, .indent .kbd, .indent samp, .indent tt, .indent pre {
+    /* font-size: 0.75em !important; */
+}
+
+.indent .pre {
+    /* overflow: hidden; */
+}
+
+.indent .pre code {
+    font-size: 1em !important;
+}
+
+.indent .pre .btn {
+    top: 0px;
+}
+
+.indent .code .btn, .indent .pre .btn {
+    background: #fff;
+}
+
+.indent .pull-quote {
+    border-top: 1px solid #555 !important;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0.5em !important;
+    margin-top: 1em !important;
+}

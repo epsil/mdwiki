@@ -1,0 +1,35 @@
+a, a:hover {
+    border-bottom: 3px solid #ccc;
+    font-weight: bold;
+}
+
+a:hover {
+    background-color: #ccc;
+}
+
+body {
+    font-family: "Linux Libertine", "Linux Libertine O", "Minion Web", "Minion Pro", "Minion Std", Minion, "Crimson Text", "ETBembo", "ETBembo LF", "STIX Two Web", "STIX Two Text", Charter, "PT Serif", Georgia, "Iowan Old Style", Iowan, "Iowan Web", "Hoefler Text", "Libre Baskerville", Baskerville, Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, serif !important;
+    font-size: 125% !important;
+    line-height: 1.35;
+}
+
+h1, h2, h3, h4, h5, h6, a, strong, nav, button, input, kbd, textarea, .modal {
+    font-family: Avenir, "Avenir Next", Futura, "Gill Sans MT", "Gill Sans", Ubuntu, "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Arial, Lato, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+}
+
+a, strong, b {
+    font-size: 0.85em;
+}
+
+code, kbd, samp, tt, pre {
+    background-color: rgb(252, 246, 240);
+    font-family: "Ubuntu Mono", "Noto Mono", "Liberation Mono", "DejaVu Sans Mono", "Andale Mono", "Consolas Web", Consolas, Menlo, Monaco, Courier, monospace !important;
+    font-size: 0.75em !important;
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 105% !important;
+        line-height: 1.3;
+    }
+}

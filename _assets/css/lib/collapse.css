@@ -1,0 +1,121 @@
+h1, h2, h3, h4, h5, h6 {
+    padding-right: 1em;
+    position: relative;
+}
+
+.h-entry .collapse-button {
+    border: none;
+    color: rgba(0, 0, 0, 0.0);
+    cursor: pointer;
+    font-style: normal;
+    height: 100%;
+    min-width: 1.5em;
+    padding-bottom: 1.5em;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    text-decoration: none;
+    text-shadow: none !important;
+    top: 0;
+    transition: all 0.5s;
+    width: 100%;
+    user-select: none;           /* Non-prefixed version */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+}
+
+h1:hover .collapse-button, h2:hover .collapse-button, h3:hover .collapse-button, h4:hover .collapse-button, h5:hover .collapse-button, h6:hover .collapse-button,
+.collapse-button[aria-expanded="false"] {
+    color: #cccccc;
+    text-decoration: none;
+    transition: all 0.5s;
+    text-align: right;
+}
+
+.collapse-button:hover {
+    background: inherit;
+    color: #999999 !important;
+}
+
+.collapse-button[aria-expanded="false"] {
+    border-bottom: 1px solid #ccc;
+}
+
+.collapse-button:before {
+    content: "\F078"; /* chevron-down */
+    font-family: FontAwesome;
+}
+
+.collapse-button[aria-expanded="true"]:before {
+    content: "\F077"; /* chevron-up */
+    font-family: FontAwesome;
+}
+
+ul .collapse-button:before {
+    /* content: "+"; /\* angle-right *\/ */
+    /* font-weight: bold; */
+    /* content: "\F106"; /\* angle-up *\/ */
+    /* content: "\F104"; /\* angle-left *\/ */
+    content: "\F101"; /* angle-double-right */
+    font-family: FontAwesome;
+    /* margin-right: 2px; */
+    margin-right: 0;
+}
+
+ul .collapse-button[aria-expanded="true"]:before {
+    /* content: "\2212"; /\* minus sign *\/ */
+    /* font-weight: bold; */
+    content: "\F105"; /* angle-right */
+    font-family: FontAwesome;
+    margin-right: 0;
+}
+
+ul.collapse, ul.collapse ul {
+    list-style-type: none !important;
+}
+
+ul.collapse li {
+    position: relative;
+}
+
+ul.collapse li:before {
+    content: normal;
+}
+
+ul.collapse .collapse-button {
+    border: none;
+    color: #999999 !important;
+    height: auto;
+    left: -1.3em;
+    top: -0.05em;
+    padding-bottom: 0;
+    padding-right: 0.5em;
+    position: absolute;
+    text-align: right;
+    width: 1em;
+}
+
+.collapse-ellipsis, .collapse-ellipsis:hover {
+    border: none;
+    color: #999999 !important;
+    font-weight: bold;
+}
+
+.collapse + .collapse-ellipsis:after {
+    content: "\2026"; /* ... */
+}
+
+.collapse-button[aria-expanded="false"] + .collapse-ellipsis:after {
+    content: "\00A0\2026"; /* ... */
+}
+
+.collapse.in + .collapse-ellipsis:after {
+    content: normal;
+}
+
+.list-inline .collapse-button {
+    display: none;
+}

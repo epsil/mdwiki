@@ -1,0 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic");
+@import url("article.css");
+
+body {
+    font-family: "Crimson Text", Crimson, "Minion Pro", Minion, serif !important;
+    line-height: 1.3;
+}

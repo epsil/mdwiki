@@ -1,0 +1,99 @@
+body {
+    color: rgb(42, 42, 42) !important;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, "Helvetica Neue", Helvetica, Arial, "Arial Unicode", Avenir, "Avenir Next", "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    font-family: "Segoe UI Semibold", "Segoe UI", -apple-system, BlinkMacSystemFont, "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, "Helvetica Neue", Helvetica, Arial, "Arial Unicode", Avenir, "Avenir Next", "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+}
+
+a, a:hover {
+    border: none;
+    color: #0072c6;
+}
+
+a:hover {
+    color: #3390b1;
+}
+
+code, kbd, samp, tt {
+    color: #006400;
+    padding: 0;
+}
+
+code, kbd, samp, tt, pre {
+    background: inherit;
+    border-radius: 3px;
+    font-size: 1.0em !important;
+}
+
+pre {
+    border: 1px solid #ccc;
+    border-radius: 0;
+    padding: 1em;
+}
+
+h1 {
+    border-bottom: 1px solid rgb(234, 236, 239);
+    font-size: 36px;
+    font-weight: normal;
+    font-family: inherit !important;
+}
+
+h2 {
+    border-bottom: 1px solid rgb(234, 236, 239);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1.27em !important;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+header h1, header h2 {
+    border: none;
+}
+
+.e-content ul a.collapse-button,
+.e-content ul a.collapse-button:before,
+.e-content ul a.collapse-button[aria-expanded="true"]:before {
+    color: inherit !important;
+}
+
+.e-content ul a.collapse-button:before {
+    content: "\2022";
+    font-family: inherit;
+}
+
+.e-content ul a.collapse-button[aria-expanded="true"]:before {
+    content: "\2022";
+    font-family: inherit;
+}
+
+.header-anchor:before {
+    content: "\f13d"; /* fa-anchor */
+}
+
+.e-content code .btn, .e-content pre .btn {
+    background: #fff;
+}

@@ -1,0 +1,22 @@
+{
+  "A PAGE": {
+    "href": "/",
+    "title": "A page"
+  },
+  "ANOTHER PAGE": {
+    "href": "/anotherpage/",
+    "title": "Another page"
+  },
+  "ANOTHERPAGE": {
+    "href": "/anotherpage/",
+    "title": "Another page"
+  },
+  "INDEX": {
+    "href": "/",
+    "title": "A page"
+  },
+  "PAGE": {
+    "href": "/page/",
+    "title": "Another page"
+  }
+}

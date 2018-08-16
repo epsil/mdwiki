@@ -1,0 +1,20 @@
+body {
+    font-family: Georgia, serif !important;
+    font-size: 120% !important;
+    line-height: 1.45;
+}
+
+h1, h2, h3, h4, h5, h6, nav, button, input, kbd, textarea, .modal {
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+code, kbd, samp, tt, pre {
+    font-size: 0.8em !important;
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 110% !important;
+        line-height: 1.45;
+    }
+}

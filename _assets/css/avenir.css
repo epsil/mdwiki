@@ -1,0 +1,171 @@
+a:hover, a:focus {
+    color: #23527c;
+}
+
+a code, a kbd, a samp, a tt,
+b code, b kbd, b samp, b tt,
+strong code, strong kbd, strong samp, strong tt,
+table code, table kbd, table samp, table tt,
+h1 code, h1 kbd, h1 samp, h1 tt,
+h2 code, h2 kbd, h2 samp, h2 tt,
+h3 code, h3 kbd, h3 samp, h3 tt,
+h4 code, h4 kbd, h4 samp, h4 tt,
+h5 code, h5 kbd, h5 samp, h5 tt,
+h6 code, h6 kbd, h6 samp, h6 tt {
+    background-color: inherit;
+    padding: 0;
+}
+
+blockquote {
+    border-left: 3px solid rgba(0, 0, 0, 0.8);
+    font-size: 1em;
+    padding-left: 20px;
+    padding: 0px 20px;
+}
+
+body {
+    color: rgba(0, 0, 0, 0.8) !important;
+    font-family: Avenir, "Avenir Next", "Segoe UI", "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Arial, "Arial Unicode", Lato, Futura, "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+    font-size: 110% !important;
+    line-height: 1.5;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    text-rendering: optimizelegibility;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body > .container {
+    max-width: 740px;
+    padding: 0px 20px 0 20px;
+}
+
+code, kbd, samp, tt {
+    white-space: nowrap;
+}
+
+code, kbd, samp, tt, pre {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    border: none;
+    color: inherit;
+    font-family: Consolas, "Consolas Web", Menlo, Monaco, "Liberation Mono", Courier, monospace !important;
+    font-size: 0.8em !important;
+    -moz-osx-font-smoothing: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Avenir, "Avenir Next", "Segoe UI", Seravek, Optima, "Optima Web", Candara, Futura, "Gill Sans", Calibri, Corbel, Helvetica, Arial, sans-serif !important;
+    font-weight: bold;
+    margin: 1em 0 15px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link,
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    color: inherit;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    /* color: rgba(0, 0, 0, 0.44); */
+    color: #000;
+    font-size: 1.3em;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h5 {
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h6 {
+    color: rgba(0, 0, 0, 0.44);
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+hr {
+    border: none;
+    padding: 1em 0 1em 0;
+    text-align: center;
+}
+
+hr:before {
+    color: rgba(0, 0, 0, 0.6);
+    content: "...";
+    letter-spacing: 0.6em;
+    position: relative;
+    text-align: center;
+    top: -1em;
+}
+
+html {
+    font-size: initial !important;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    margin: 1em 0 1em 0;
+}
+
+pre {
+    padding: 1.5em;
+}
+
+pre code, pre kbd, pre samt, pre tt {
+    font-size: 1em !important;
+}
+
+table {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    word-break: keep-all;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 6px 13px;
+}
+
+table tr {
+    background-color: #fff;
+    border-top: 1px solid #ccc;
+}
+
+table tr:nth-child(2n) {
+    background-color: #f8f8f8;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* ul > li:before { */
+/*     content: "\2013"; */
+/*     margin-left: -1.1em; */
+/*     position: absolute; */
+/* } */

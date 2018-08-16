@@ -1,0 +1,1142 @@
+@import url("../fonts/stix.css");
+
+abbr, abbr[title], abbr[data-original-title] {
+    border-bottom: none;
+    text-decoration: none;
+}
+
+abbr.acronym, .caps {
+    font-variant: oldstyle-nums small-caps;
+    letter-spacing: 0.1em;
+    text-transform: lowercase;
+}
+
+.pull-quote blockquote {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.e-content ul.collapse a.collapse-button:before {
+    color: #999999 !important;
+    text-align: right !important;
+    margin-right: 0 !important;
+    padding-right: 0.1em !important;
+}
+
+.e-content a.image:before {
+    content: normal;
+}
+
+body a.image {
+    border: none;
+    text-decoration: none;
+}
+
+/* .e-content a[href^="#"]:before { */
+/*     content: "\f0c1"; /\* fa-link *\/ */
+/* } */
+
+pre .caps {
+    font-variant: normal;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+a, a:hover, a:focus {
+    /* color: #337ab7; */
+    /* border-bottom: 1px solid #000; */
+    /* border-bottom: 1pt solid rgba(0, 0, 0, 0.8); */
+    /* border-bottom: 0.5pt solid rgba(0, 0, 0, 0.8); */
+    border-bottom: 0.5pt solid rgba(0, 0, 0, 0.3);
+    /* border-bottom: 1px solid #ccc; */
+    color: inherit;
+    text-decoration: none;
+}
+
+/* h1 a[href]:before, */
+/* h2 a[href]:before, */
+/* h3 a[href]:before, */
+/* h4 a[href]:before, */
+/* h5 a[href]:before, */
+/* h6 a[href]:before { */
+/*     content: normal !important; */
+/* } */
+
+/* a:hover, a:focus { */
+/*     /\* border-bottom: 1px solid #23527c; *\/ */
+/*     /\* border-bottom: 1px dotted #337ab7; *\/ */
+/*     border-bottom: 1px solid #ccc; */
+/*     color: #23527c; */
+/*     text-decoration: none; */
+/* } */
+
+/* a code, a kbd, a samp, a tt, */
+/* b code, b kbd, b samp, b tt, */
+/* del code, del kbd, del samp, del tt, */
+/* s code, s kbd, s samp, s tt, */
+/* strong code, strong kbd, strong samp, strong tt, */
+/* table code, table samp, table tt, */
+/* h1 code, h1 kbd, h1 samp, h1 tt, */
+/* h2 code, h2 kbd, h2 samp, h2 tt, */
+/* h3 code, h3 kbd, h3 samp, h3 tt, */
+/* h4 code, h4 kbd, h4 samp, h4 tt, */
+/* h5 code, h5 kbd, h5 samp, h5 tt, */
+/* h6 code, h6 kbd, h6 samp, h6 tt { */
+/*     background-color: inherit; */
+/*     font-size: 0.75em !important; */
+/*     padding: 0; */
+/* } */
+
+/* b, strong, h1 .fa, h2 .fa, h3 .fa, h4 .fa, h5 .fa, h6 .fa { */
+/*     font-size: 0.85em; */
+/* } */
+
+/*
+b code, b kbd, b samp, b tt,
+strong code, strong kbd, strong samp, strong tt {
+    font-size: 0.8em !important;
+}
+*/
+
+blockquote {
+    border-left: 5px solid rgba(0, 0, 0, 0.1);
+    /* color: #555; */
+    color: inherit;
+    font-size: 1em;
+    margin: 1em 0 1em 0;
+    padding-left: 20px;
+    padding: 0 0 0 20px;
+}
+
+blockquote footer {
+    font-size: 1em;
+    text-align: right;
+}
+
+blockquote footer:before {
+  content: '\2013\00A0';
+}
+
+body {
+    color: rgba(0, 0, 0, 0.8) !important;
+    /* color: #555 !important; */
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Lato, "Open Sans", Avenir, "Avenir Next", "Myriad Set Pro", "Myriad Pro", Myriad, Ubuntu, "Bitstream Vera Sans", "DejaVu Sans", Helvetica, Arial, Tahoma, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important; */
+    /* font-size: 105% !important; */
+    /* color: #333 !important; */
+    /* font-family: "STIX Two Web", "STIX Two Text", Times, "Times Roman", "Times New Roman", "Lora Web", Lora, "Crimson Text", Crimson, "PT Serif", "Iowan Old Style", Iowan, "Iowan Web", Georgia, Constantia, Cambria, Charter, "Hoefler Text", Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important; */
+    font-family: "STIX Two Web", "STIX Two Text", "Minion Web", "Minion Pro", "Minion Std", Minion, "Crimson Text", "ETBembo", "ETBembo LF", Charter, "PT Serif", Georgia, "Iowan Old Style", Iowan, "Iowan Web", "Hoefler Text", "Libre Baskerville", Baskerville, Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, serif !important;
+    /* font-size: 120% !important; */
+    /* font-size: 115% !important; */
+    /* font-size: 132% !important; */
+    font-size: 145% !important;
+    font-variant: common-ligatures oldstyle-nums;
+    line-height: 1.4;
+    /* line-height: 1.5; */
+    /* line-height: 1.55; */
+    margin-bottom: 2em;
+    margin-top: 3em;
+    text-rendering: optimizelegibility;
+    -webkit-font-variant-ligatures: discretionary-ligatures;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+.h-entry > header, .e-content > * {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 740px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+code, kbd, samp, tt {
+    white-space: pre-wrap;
+}
+
+code, kbd, samp, tt, pre {
+    /* background-color: #f9f9f9; */
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+    border: none;
+    color: inherit;
+    font-family: "Consolas Web", Consolas, Menlo, Monaco, "Liberation Mono", "Latin Modern Mono", Courier, monospace !important;
+    /* font-size: 0.83em !important; */
+    /* font-size: 0.8em !important; */
+    font-size: 0.7em !important;
+    font-variant: normal;
+    -moz-osx-font-smoothing: auto;
+}
+
+dd {
+    margin-left: 1em;
+}
+
+figure {
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+h1, h2, h3, h4, h5, h6, nav, button, input, kbd, textarea, .modal {
+    font-family: "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Arial, Lato, Avenir, "Avenir Next", Futura, "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* color: #333; */
+    /* color: #23527c; */
+    color: inherit;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 1.2;
+    margin: 1em 0 15px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+h1 a:link, h2 a:link, h3 a:link, h4 a:link, h5 a:link, h6 a:link,
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
+    border: none;
+    color: inherit;
+}
+
+/* h2 em, h3 em, h4 em, h6 em, .p-summary em { */
+/*
+.p-summary em {
+    font-style: normal;
+}
+*/
+
+header {
+    /* color: #23527c; */
+    text-align: center;
+}
+
+header a {
+    text-decoration: none !important;
+}
+
+header h1, header h2 {
+    font-style: normal;
+    padding: 0;
+    text-align: center;
+    /* text-align: left !important; */
+}
+
+h1 {
+    /* font-size: 3em; */
+    font-size: 175%;
+    /* font-weight: 200; */
+    padding-bottom: 0.3em;
+}
+
+h2 {
+    /* font-size: 1.9em; */
+    font-size: 140%;
+    /* font-weight: 200; */
+}
+
+h3 {
+    /* font-size: 1.4em; */
+    font-size: 110% !important;
+    /* font-weight: 200; */
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 1em;
+    font-style: italic;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+h1 a:not([aria-hidden]),
+h2 a:not([aria-hidden]),
+h3 a:not([aria-hidden]),
+h4 a:not([aria-hidden]),
+h5 a:not([aria-hidden]),
+h6 a:not([aria-hidden]) {
+    position: relative;
+    z-index: 999;
+}
+
+hr {
+    border: none;
+    color: rgba(0, 0, 0, 0.6);
+    padding: 0.5em 0;
+    text-align: center;
+}
+
+hr:before {
+    content: "\00B7\00B7\00B7";
+    /* content: "..."; */
+    /* content: "\2766"; /\* fleuron: floral heart *\/ */
+    letter-spacing: 0.6em;
+    position: relative;
+    text-align: center;
+    /* top: -1em; */
+    top: -0.75em;
+}
+
+/* hr { */
+/*     border: none; */
+/*     /\* border-bottom: 1px solid #eee; *\/ */
+/*     /\* border-bottom: 1px solid #ccc; *\/ */
+/*     border-bottom: 1px solid #999; */
+/*     padding: 0; */
+/*     margin-bottom: 1.5em; */
+/*     margin-top: 1.5em; */
+/*     text-align: center; */
+/* } */
+
+/* hr:before { */
+/*     content: normal; */
+/* } */
+
+hr.footnotes-sep {
+    border-top: none;
+    border-bottom: 1px solid #ccc;
+    margin-left: 0;
+    padding: 1em 0 0 0;
+    width: 20%;
+}
+
+hr.footnotes-sep:before {
+    content: normal;
+}
+
+html {
+    font-size: initial !important;
+}
+
+div.figure {
+    max-width: 100%;
+}
+
+div.figure img {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+input {
+    max-width: 100%;
+}
+
+kbd {
+    background-color: #fcfcfc;
+    border-color: #ccc #ccc #bbb;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 -1px 0 #bbb inset;
+    color: #555;
+    display: inline-block;
+    /* font-family: inherit !important; */
+    /* font-size: 0.5em !important; */
+    font-variant-numeric: normal;
+    line-height: 1em;
+    padding: 3px 5px;
+    vertical-align: middle;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+}
+
+kbd .fa, kbd .glyphicon {
+    color: inherit !important;
+}
+
+mark, .mark {
+    color: inherit;
+    background-color: rgba(39, 243, 106, 0.1); /* #e8fef0 */
+    padding: 0;
+}
+
+.mark {
+    cursor: pointer;
+}
+
+.mark:hover {
+    background-color: rgba(97, 255, 160, 0.8); /* #7cffb1 */
+}
+
+nav {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    font-variant-numeric: normal;
+}
+
+nav a {
+    border: none !important;
+}
+
+nav, .navbar-default {
+    border: none;
+    background-color: inherit;
+}
+
+.nav > li > a:hover,
+.nav > li > a:hover .fa,
+.nav > li > a:focus,
+.nav > li > a:focus .fa {
+    background-color: inherit;
+    color: #000000 !important;
+}
+
+.e-content p {
+    margin: 1em 0 1em 0;
+}
+
+p.author {
+    /* display: none; */
+}
+
+pre {
+    line-height: 1.2;
+    margin: 1em 0;
+    /* padding: 1.5em; */
+    /* padding: 20px; */
+    padding: 1em;
+    overflow: hidden;
+}
+
+pre code, pre kbd, pre samt, pre tt {
+    border: none;
+    font-size: 1em !important;
+}
+
+sub, sup {
+    font-variant: normal;
+    font-weight: inherit;
+}
+
+sup a, sub a, .footnote-backref {
+    border: none !important;
+    text-decoration: none !important;
+}
+
+.footnote-ref, .footnote-backref {
+    color: #666;
+}
+
+.footnote-ref .left-bracket,
+.footnote-ref .right-bracket,
+.footnote-ref .suffix-colon,
+.footnote-ref .suffix-number {
+    display: none;
+}
+
+/* sup + sup { */
+/*     margin-left: 0.2em; */
+/* } */
+
+/* sup + sup:before { */
+/*     content: ", "; */
+/* } */
+
+s:hover {
+    text-decoration: none;
+}
+
+table, .table {
+    margin: 1em auto;
+    width: auto;
+}
+
+time, .author {
+    /* color: rgba(0, 0, 0, 0.44); */
+    margin-top: 0em;
+    font-weight: normal;
+}
+
+article ul, #toc ul {
+    list-style-type: none;
+}
+
+article ul > li, #toc ul > li {
+    text-indent: 0 !important;
+}
+
+article ul > li:before, #toc ul > li:before {
+    color: rgba(0, 0, 0, 0.6);
+    content: "\2022";
+    margin-left: -0.9em;
+    position: absolute;
+}
+
+.fa, .glyphicon, nav a, nav a:hover {
+    border: none;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    color: #666;
+    display: block;
+    float: none;
+    font-size: 5em;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    z-index: 100;
+}
+
+.pull-quote {
+    border-bottom: 5px solid rgba(0, 0, 0, 0.1);
+    border-left: none;
+    border-top: 5px solid rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+    line-height: 1.3;
+    margin: 1em 3em;
+    padding: 1em;
+}
+
+.pull-quote.left, .pull-quote.right {
+    padding: 0.5em;
+    width: 10em;
+}
+
+.pull-quote.left {
+    margin: 0.3em 1em 0.5em 0;
+}
+
+.pull-quote.right {
+    margin: 0.3em 0 0.5em 1em;
+}
+
+.pull-quote p {
+    margin: 0;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.navbar {
+    min-height: 0;
+}
+
+.hljs-name {
+    color: #183691;
+    font-weight: normal;
+}
+
+.hljs-name .hljs-builtin-name, .hljs-keyword {
+    color: #a71d5d;
+    font-weight: normal;
+}
+
+/* .h-card { */
+/*     display: none; */
+/* } */
+
+.author {
+    text-align: center;
+}
+
+.p-author {
+    /* font-style: italic; */
+}
+
+.flag-icon {
+    font-size: 0.6em;
+    vertical-align: middle;
+}
+
+.p-summary {
+    /* font-style: italic; */
+    /* font-size: 1.3em; */
+    font-size: 0.9em;
+    font-weight: 200;
+    line-height: 1.35;
+    text-align: center;
+}
+
+.dquo {
+    margin-left: -0.2em;
+}
+
+.quo {
+    margin-left: -0.1em;
+}
+
+.url {
+    font-style: italic;
+    font-variant-ligatures: none;
+    word-wrap: break-word;
+}
+
+header {
+    margin-bottom: 1em;
+}
+
+/* TODO: remove the actual HTML elements */
+header .header-anchor, header .collapse-button {
+    display: none;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0;
+}
+
+header p {
+    margin-top: 1em !important;
+}
+
+.spoiler, .spoiler * {
+    background-color: #f2f2f2;
+    color: #f2f2f2 !important;
+    /* transition: 2.5s; */
+}
+
+/*
+.spoiler:hover, .spoiler:hover * {
+    color: inherit !important;
+    transition: 5s;
+}
+*/
+
+s *, s *:before, s *:after {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.task-list-item input {
+    left: -1.4em;
+    margin-right: 0.5em;
+    position: absolute;
+    top: 0.2em;
+}
+
+.task-list-item label {
+    font-weight: inherit;
+    margin: 0;
+}
+
+.task-list-item:before {
+    content: normal;
+}
+
+.nobr {
+    white-space: pre;
+}
+
+.emoji_blue_book {
+    color: #42ade2;
+}
+
+.emoji_green_book {
+    color: #83bf4f;
+}
+
+/*
+Bootstrap provides four classes (configurable with Less):
+-   xs (<768px): 0-767 pixels
+    -   "xxs" (<=480px): 0-480 pixels
+        -   max-width: 480px (or max-device-width: 480px)
+        -   iPhone (orientation: portrait)
+    -   481-767 pixels
+        -   Extra small devices
+        -   Phones
+        -   iPhone (orientation: landscape)
+-   sm (>=768px): 768-991 pixels
+    -   Small devices
+        -   Tablets
+        -   iPad (orientation: portrait)
+-   md (>=992px): 992-1199 pixels
+    -   Medium devices
+        -   Desktops
+        -   iPad (orientation: landscape)
+-   lg (>=1200px): 1200-oo pixels
+    -   Large devices
+        -   Large desktops
+*/
+
+@media (max-width: 768px) {
+    .h-entry > header, .e-content > * {
+        max-width: 640px;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 130% !important;
+        line-height: 1.3;
+    }
+
+    nav > div {
+        padding: 0 !important;
+    }
+
+    .navbar-left {
+        float: left;
+    }
+
+    .navbar-right {
+        float: right;
+    }
+
+    .left, .right {
+        float: none;
+        margin: 0 auto 0.7em auto !important;
+    }
+
+    /* does this belong in indent.css? */
+    html body .e-content .left + p, html body .e-content .right + p {
+        text-indent: 0 !important;
+    }
+}
+
+@media print {
+    body {
+        font-size: 100% !important;
+    }
+
+    [aria-hidden] {
+        display: none !important;
+    }
+}
+
+nav .input-group-addon {
+    background-color: inherit;
+    border: none;
+}
+
+nav .input-group-addon * {
+    display: none;
+}
+
+nav input {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    height: 100% !important;
+    max-height: 100% !important;
+    padding: 0 !important;
+    text-align: center;
+}
+
+.input-group {
+    border: none !important;
+}
+
+/* .form-group { */
+/*     border: none; */
+/*     margin: 0 !important; */
+/*     padding: 0 !important; */
+/* } */
+
+.navbar-form {
+    border: none !important;
+    /* margin: 0 !important; */
+    padding: 0 !important;
+}
+
+time {
+    color: #666;
+    float: right;
+}
+
+header time {
+    color: inherit;
+    float: none;
+}
+
+.e-content time:before {
+    color: #666;
+    content: "\f133"; /* fa-calendar-o */
+    font-family: FontAwesome;
+    font-size: 0.65em;
+    font-style: normal;
+    font-weight: normal;
+    padding-right: 0.3em;
+}
+
+time .time:before {
+    color: #666;
+    content: "\f017"; /* fa-clock-o */
+    font-family: FontAwesome;
+    font-size: 0.65em;
+    font-style: normal;
+    font-weight: normal;
+    padding-right: 0.3em;
+}
+
+button .glyphicon, button .fa {
+    color: inherit !important;
+}
+
+.btn-primary {
+    font-weight: bold;
+}
+
+input {
+    font-size: 16px !important;
+}
+
+/* https://cpratt.co/twitter-bootstrap-callout-css-styles/ */
+.bs-callout {
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+.bs-callout h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.bs-callout p:last-child {
+    margin-bottom: 0;
+}
+.bs-callout code {
+    border-radius: 3px;
+}
+.bs-callout+.bs-callout {
+    margin-top: -5px;
+}
+.bs-callout-default {
+    border-left-color: #777;
+}
+.bs-callout-default h4 {
+    color: #777;
+}
+.bs-callout-primary {
+    border-left-color: #428bca;
+}
+.bs-callout-primary h4 {
+    color: #428bca;
+}
+.bs-callout-success {
+    border-left-color: #5cb85c;
+}
+.bs-callout-success h4 {
+    color: #5cb85c;
+}
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+.bs-callout-danger h4 {
+    color: #d9534f;
+}
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+.bs-callout-warning h4 {
+    color: #f0ad4e;
+}
+.bs-callout-info {
+    border-left-color: #5bc0de;
+}
+.bs-callout-info h4 {
+    color: #5bc0de;
+}
+
+/* https://clipboardjs.com/ */
+.pre {
+    position: relative;
+}
+
+.btn.clippy {
+    z-index: 999;
+}
+
+.pre .btn.clippy {
+    padding: 6px 12px;
+    font-size: 13px;
+    font-weight: bold;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-appearance: none
+}
+
+.pre .btn.clippy {
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -o-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+    padding: 4px 5px 1px 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.btn.clippy i {
+    background-image: url("../img/clippy.svg") !important;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.btn.clippy i:before {
+    content: normal;
+}
+
+.pre .btn.clippy i {
+    height: 16px;
+    width: 16px;
+}
+
+.code:hover .btn.clippy, .code .btn.clippy:focus,
+.pre:hover .btn.clippy, .pre .btn.clippy:focus {
+    opacity: 1;
+}
+
+.code {
+    position: relative;
+    white-space: pre;
+}
+
+.code .btn.clippy {
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    opacity: 0;
+    padding: 0;
+    /* position: absolute; */
+    /* right: -1.6em; */
+    /* bottom: 0.2em; */
+    display: inline-block;
+    position: relative;
+    /* left: -1.2em; */
+    left: -0.05em;
+    /* right: -0.1em; */
+    /* top: 0.5em; */
+    /* top: 0.1em; */
+    margin-right: -1.6em;
+    /* margin-right: 0em; */
+    /* display: none; */
+}
+
+.code .btn.clippy i {
+    height: 1em;
+    width: 1.5em;
+}
+
+a .code .btn.clippy {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .pre .btn.clippy {
+        opacity: 1;
+    }
+}
+
+.task-list-item > .collapse-button {
+    display: none;
+}
+
+ul, ol {
+    padding-left: 1.3em;
+}
+
+ol ol {
+    list-style-type: lower-latin;
+}
+
+ol ol ol {
+    list-style-type: lower-roman;
+}
+
+ol ol ol {
+    list-style-type: lower-roman;
+}
+
+ol ol ol ol {
+    list-style-type: numeric;
+}
+
+/*
+ol {
+  counter-reset: list;
+}
+
+ol > li {
+  list-style: none;
+  position: relative;
+}
+
+ol > li:before {
+  content: counter(list) ") ";
+  counter-increment: list;
+  left: -1.4em;
+  position: absolute;
+}
+*/
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+#endnotes .footnotes-sep,
+#fotnoter .footnotes-sep,
+#footnotes .footnotes-sep,
+#notes .footnotes-sep {
+    display: none;
+}
+
+.tag-list {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+
+.tag-list li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.tag-list [aria-hidden] {
+    display: none;
+}
+
+.tag, .tag-list li {
+    border-color: #ccc #ccc #bbb;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    /* padding: 2px 4px; */
+    padding: 0px 4px;
+}
+
+.colon, .semicolon, .questionmark, .exclamationmark, .closeparen, .closebracket {
+    margin-left: 0.05em;
+}
+
+.openparen, .openbracket {
+    margin-right: 0.05em;
+}
+
+/* .emdash { */
+/*     margin-left: 0.1em; */
+/*     margin-right: 0.1em; */
+/* } */
+
+.emdash:before, .emdash:after {
+    content: "\200A";
+}
+
+/* section:hover { */
+/*     border: 1px solid blue; */
+/* } */
+
+#personer h3, #links h2, #linker h2 {
+    clear: both;
+}
+
+/*
+code {
+    background: inherit;
+    padding: 0;
+}
+*/
+
+.sidenote, figcaption {
+    line-height: 1.3;
+}
+
+.sidenote {
+    clear: both;
+    float: right;
+    font-size: 80%;
+    margin: 0.3em -9em 0.5em 1em;
+    width: 8em;
+}
+
+.sidenote blockquote {
+    border: none;
+}
+
+.sidenote p:first-of-type {
+    margin-top: 0em;
+}
+
+.sidenote .ref-mark {
+    margin-right: 0.2em;
+}
+
+.sidenote .left-bracket, .sidenote .right-bracket {
+    display: none;
+}
+
+.sidenote .footnote-backref {
+    display: none;
+}
+
+.sidenote {
+    display: none;
+}
+
+.sidenotes .sidenote {
+    display: block;
+}
+
+.sidenotes .endnotes {
+    display: none !important;
+}
+
+@media (max-width: 1000px) {
+    .sidenote {
+        margin: 0.3em 0 0.5em 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sidenote {
+        width: 12em;
+        margin-right: -13em;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidenote, .sidenotes .sidenote {
+        display: none;
+    }
+    .endnotes, .sidenotes .endnotes {
+        display: block !important;
+    }
+}
+
+.e-content table img {
+    max-width: none !important;
+    width: initial !important;
+}
+
+/* .footnote-ref + .footnote-ref:before { */
+/*     content: ", "; */
+/* } */
+
+iframe {
+    display: block;
+    margin: 1.3em auto;
+}

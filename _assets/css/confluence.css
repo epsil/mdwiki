@@ -1,0 +1,135 @@
+body {
+    font-family: "Segoe UI", "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, Seravek, "League Spartan", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Arial, Lato, Avenir, "Avenir Next", "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+    font-size: 88% !important;
+    font-variant-numeric: normal;
+    line-height: 1.5;
+    margin-top: 3em;
+}
+
+a, a:hover {
+    border: none;
+    color: rgb(53, 114, 176);
+}
+
+abbr.acronym, .caps {
+    font-variant: normal;
+    letter-spacing: inherit;
+    text-transform: none;
+}
+
+blockquote {
+    color: rgb(112, 112, 112);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+}
+
+code, kbd, samp, tt {
+    background: inherit;
+    padding: 0;
+}
+
+code, kbd, samp, tt, pre {
+    font-size: 0.95em !important;
+}
+
+pre {
+    background: inherit;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 1em;
+}
+
+code .btn, pre .btn {
+    background: #fff !important;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+hr:before {
+    content: normal;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: normal;
+    margin-top: 1.5em;
+}
+
+h3 {
+    font-size: 1.15em !important;
+    font-weight: bold;
+    margin-top: 2em;
+}
+
+h4 {
+    margin-top: 2em;
+}
+
+header {
+    color: rgb(32, 80, 129);
+}
+
+body nav, body .navbar-default {
+    background-color: #0747a6;
+    color: #ffffff !important;
+}
+
+nav {
+    box-shadow: none;
+}
+
+.fa, .glyphicon, nav a, nav a:hover {
+    color: inherit;
+}
+
+nav .fa, nav .glyphicon {
+    color: inherit !important;
+}
+
+.nav a,
+.nav li a,
+.nav li a .fa,
+.nav li a:focus,
+.nav li a:hover,
+.nav li > a:focus .fa,
+.nav li > a:hover .fa,
+.nav input,
+nav a,
+nav li a,
+nav .form-control,
+nav .form-control::-moz-placeholder,
+#toc li:before,
+#toc li a {
+    color: #ffffff !important;
+}
+
+.navbar-form {
+    box-shadow: none !important;
+}
+
+.e-content ul a.collapse-button,
+.e-content ul a.collapse-button:before,
+.e-content ul a.collapse-button[aria-expanded="true"]:before {
+    color: inherit !important;
+}
+
+.e-content ul a.collapse-button:before {
+    content: "\2022";
+    font-family: inherit;
+}
+
+.e-content ul a.collapse-button[aria-expanded="true"]:before {
+    content: "\2022";
+    font-family: inherit;
+}

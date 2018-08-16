@@ -1,0 +1,171 @@
+body {
+    color: rgb(36, 41, 46) !important;
+    font-family: Lato, -apple-system, BlinkMacSystemFont, "Segoe UI", "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, "Helvetica Neue", Helvetica, Arial, "Arial Unicode", Avenir, "Avenir Next", "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+    font-size: 95% !important;
+    font-variant: normal;
+    line-height: 1.5;
+}
+
+a, a:hover {
+    border: none;
+    color: #0576b9;
+}
+
+a:hover {
+    color: #005e99;
+    text-decoration: underline;
+}
+
+blockquote {
+    border-color: #e8e8e8;
+}
+
+code, kbd, samp, tt {
+    color: #d72b3f;
+}
+
+code, kbd, samp, tt, pre {
+    background: #f7f7f9;
+    border: 0.13em solid #e1e1e8;
+    border-radius: 3px;
+    font-size: 0.75em !important;
+}
+
+pre {
+    padding: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    /* font-family: "Roboto Slab", "Tisa Web Pro", "Palatino Linotype", Palatino, Constantia, Cambria, Charter, Utopia, "PT Serif", "Iowan Old Style", Georgia, Playbill, "Bernard MT Condensed", "Bernard MT", Bernard, "Bodoni MT Black", "Minion Web", "Minion Pro", "Minion Std", Minion, "Crimson Text", "ETBembo", "ETBembo LF", "STIX Two Web", "STIX Two Text", "Iowan Old Style", Iowan, "Iowan Web", "Hoefler Text", "Libre Baskerville", Baskerville, Cambria, Constantia, Utopia, Marion, Cochin, serif !important; */
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    padding-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.27em !important;
+    font-weight: 600;
+}
+
+h4 {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+h5 {
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+}
+
+h6 {
+    font-size: 1em;
+    font-weight: normal;
+}
+
+header h1, header h2 {
+    border: none;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    margin-bottom: 1.5em;
+    margin-top: 1.5em;
+    text-align: center;
+}
+
+hr:before {
+    content: normal;
+}
+
+.e-content ul a.collapse-button,
+.e-content ul a.collapse-button:before,
+.e-content ul a.collapse-button[aria-expanded="true"]:before {
+    color: inherit !important;
+}
+
+.e-content ul a.collapse-button:before {
+    content: "\2022";
+    font-family: inherit;
+}
+
+.e-content ul a.collapse-button[aria-expanded="true"]:before {
+    content: "\2022";
+    font-family: inherit;
+}
+
+.header-anchor:before {
+    content: "\e144"; /* glyphicon-link */
+    font-family: 'Glyphicons Halflings';
+}
+
+body nav, body .navbar-default {
+    background-color: #4d394b;
+    color: #fff !important;
+}
+
+nav .topbar {
+    background-color: #211920;
+}
+
+nav {
+    box-shadow: none;
+}
+
+.fa, .glyphicon, nav a, nav a:hover {
+    color: inherit;
+}
+
+nav .fa, nav .glyphicon {
+    color: inherit !important;
+}
+
+.nav a,
+.nav a:hover,
+.nav li a,
+.nav li a:hover,
+.nav li a .fa,
+.nav li a:focus,
+.nav li > a:focus .fa,
+.nav input,
+nav a,
+nav li a,
+nav .form-control,
+nav .form-control::-moz-placeholder,
+.nav > li > a:hover,
+.nav > li > a:hover .fa,
+.nav > li > a:focus,
+.nav > li > a:focus .fa,
+#toc li:before,
+#toc li a:hover,
+#toc li a {
+    color: #fff !important;
+}
+
+.navbar-form {
+    box-shadow: none !important;
+}
+
+a.person, a[title^="@"] {
+    /* background-color: #fff6d1; */
+    background-color: #eaf5fc;
+    border-radius: 3px;
+}
+
+/* a[title^="@"]:before { */
+/*     content: "@" !important; */
+/*     font-family: inherit !important; */
+/*     font-weight: bold !important; */
+/*     font-size: 0.75em !important; */
+/*     padding-right: 0.2em !important; */
+/* } */
