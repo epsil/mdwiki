@@ -76,7 +76,91 @@ footnotes.addSidenotes = function () {
   })
 }
 
+// the following is borrowed from http://gwern.net/
+footnotes.footnotetimeout = false
+
+footnotes.setup = function () {
+  var footnotelinks = $('.footnote-ref a')
+  footnotelinks.off('mouseover', footnotes.footnoteover)
+  footnotelinks.off('mouseout', footnotes.footnoteoout)
+  footnotelinks.on('mouseover', footnotes.footnoteover)
+  footnotelinks.on('mouseout', footnotes.footnoteoout)
+}
+
+footnotes.addFootnoteHandlers = function () {
+  return this.each(function () {
+    var body = $(this)
+    body.find('.footnote-ref a').each(function () {
+      var a = $(this)
+      a.removeAttr('title')
+      a.off('mouseover', footnotes.footnoteover)
+      a.off('mouseout', footnotes.footnoteoout)
+      a.on('mouseover', footnotes.footnoteover)
+      a.on('mouseout', footnotes.footnoteoout)
+    })
+  })
+}
+
+footnotes.footnoteover = function () {
+  clearTimeout(footnotes.footnotetimeout)
+  $('#footnotediv').stop()
+  $('#footnotediv').remove()
+
+  var id = $(this).attr('href').substr(1)
+  var position = $(this).offset()
+
+  var div = $(document.createElement('div'))
+  div.attr('id', 'footnotediv')
+  div.bind('mouseover', footnotes.divover)
+  div.bind('mouseout', footnotes.footnoteoout)
+
+  var el = document.getElementById(id)
+  div.html('<div>' + $(el).html() + '</div>')
+
+  // var body = $('.e-content') || $(document.body)
+  var body = $(document.body)
+  body.append(div)
+
+  var left = position.left
+  if (left + 420 > $(window).width() + $(window).scrollLeft()) {
+    left = $(window).width() - 420 + $(window).scrollLeft()
+  }
+  var top = position.top + 20
+  if (top + div.height() > $(window).height() + $(window).scrollTop()) {
+    top = position.top - div.height() - 15
+  }
+  div.css({
+    left: left,
+    top: top,
+    opacity: 1,
+    position: 'absolute'
+  })
+}
+
+footnotes.footnoteoout = function () {
+  footnotes.footnotetimeout = setTimeout(function () {
+    $('#footnotediv').animate({
+      opacity: 0
+    }, 600, function () {
+      $('#footnotediv').remove()
+    })
+  }, 100)
+}
+
+footnotes.divover = function () {
+  clearTimeout(footnotes.footnotetimeout)
+  $('#footnotediv').stop()
+  $('#footnotediv').css({
+    opacity: 1
+  })
+}
+
+// $(document).ready(function() {
+//   footnotes.setup()
+// })
+
 $.fn.fixFootnotes = footnotes.fixFootnotes
 $.fn.addSidenotes = footnotes.addSidenotes
+$.fn.addFootnoteHandlers = footnotes.addFootnoteHandlers
 
 module.exports = footnotes

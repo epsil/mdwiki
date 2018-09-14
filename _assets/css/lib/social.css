@@ -436,8 +436,7 @@
 .e-content a[href$=".azw3"]:before,
 .e-content a[href$=".epub"]:before,
 .e-content a[href$=".mobi"]:before,
-.e-content a[href$=".pdf"]:before,
-.e-content a[href$="docs.google."]:before {
+.e-content a[href$=".pdf"]:before {
     content: "\f1c1"; /* fa-pdf-o */
 }
 
@@ -469,14 +468,16 @@
 .e-content a[href$=".doc"]:before,
 .e-content a[href$=".docx"]:before,
 .e-content a[href$=".odt"]:before,
-.e-content a[href$=".rtf"]:before {
+.e-content a[href$=".rtf"]:before,
+.e-content a[href*="docs.google."]:before {
     content: "\f1c2"; /* fa-file-word-o */
 }
 
 .e-content a[href$=".odp"]:before,
 .e-content a[href$=".ppt"]:before,
 .e-content a[href$=".pptx"]:before,
-.e-content a[href$=".PPTX"]:before {
+.e-content a[href$=".PPTX"]:before,
+.e-content a[href*="docs.google.com/presentation"]:before {
     content: "\f1c4"; /* fa-file-powerpoint-o */
 }
 
@@ -1013,6 +1014,8 @@
 }
 
 /* simplybuilt */
+.e-content a[href*="discord."]:before,
+.e-content a[href*="discordapp."]:before,
 .e-content a[href*="simplybuilt."]:before {
   content: "\f215"; /* fa-simplybuilt */
 }

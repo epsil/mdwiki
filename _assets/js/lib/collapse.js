@@ -244,7 +244,11 @@ collapse.addSection = function (header) {
   }
   var end = stop.join(', ')
   var section = header.nextUntil(end)
-  section = section.wrapAll('<div>').parent()
+  if (!section.length) {
+    section = $('<div>').insertAfter(header)
+  } else {
+    section = section.wrapAll('<div>').parent()
+  }
   collapse.sectionId(header, section)
   return section
 }

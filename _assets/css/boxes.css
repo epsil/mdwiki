@@ -1,0 +1,53 @@
+.e-content h1, .e-content h2, .e-content h3, .e-content h4, .e-content h5, .e-content h6 {
+    font-size: 0.9em !important;
+    font-style: normal;
+    font-weight: bold;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+section[id], .e-content > section {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    padding-left: 1em;
+    /* padding-right: 0.2em; */
+    padding-right: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+section div section {
+    margin-right: -0.8em;
+}
+
+section[id]:hover {
+    border: 1px solid #999;
+}
+
+blockquote {
+    border-left: 1px solid #ccc;
+    /* border-radius: 3px; */
+    /* border: 1px solid #ccc; */
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); */
+    /* padding-left: 20px; */
+    /* padding-right: 20px; */
+}
+
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+hr:before {
+    content: normal;
+}
+
+.e-content .collapse-button {
+    border: none;
+}

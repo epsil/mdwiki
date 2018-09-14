@@ -1,0 +1,40 @@
+blockquote, pre {
+    background: inherit;
+    border: none;
+    margin-left: 1.3em;
+    padding: 0;
+}
+
+blockquote blockquote {
+    margin-left: 1.3em;
+}
+
+code, .kbd, samp, tt {
+    background: inherit;
+    padding: 0;
+}
+
+code, .kbd, samp, tt {
+    font-size: 0.75em !important;
+}
+
+.pre code {
+    font-size: 1em !important;
+}
+
+.pre .btn {
+    top: 0px;
+}
+
+.e-content .code .btn, .e-content .pre .btn {
+    background: #fff;
+}
+
+.pull-quote {
+    border-top: 1px solid #555 !important;
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-top: 0.5em !important;
+    margin-top: 1em !important;
+}

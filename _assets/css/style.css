@@ -179,7 +179,7 @@ figure {
 }
 
 h1, h2, h3, h4, h5, h6, nav, button, input, kbd, textarea, .modal {
-    font-family: "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Arial, Lato, Avenir, "Avenir Next", Futura, "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+    font-family: "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Arial, Helvetica, Lato, Avenir, "Avenir Next", Futura, "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -943,7 +943,7 @@ a .code .btn.clippy {
 
 @media (max-width: 767px) {
     .pre .btn.clippy {
-        opacity: 1;
+        /* opacity: 1; */
     }
 }
 
@@ -1066,15 +1066,21 @@ code {
 }
 
 .sidenote {
+    border-top: 1px solid #ccc;
     clear: both;
     float: right;
     font-size: 80%;
     margin: 0.3em -9em 0.5em 1em;
+    padding-top: 0.6em;
     width: 8em;
 }
 
 .sidenote blockquote {
     border: none;
+}
+
+.sidenote blockquote em {
+    font-style: normal;
 }
 
 .sidenote p:first-of-type {
@@ -1107,7 +1113,24 @@ code {
 
 @media (max-width: 1000px) {
     .sidenote {
+        border-left: 1px solid #ccc;
+        border-top: none;
         margin: 0.3em 0 0.5em 1em;
+        padding-left: 0.75em;
+        padding-top: 0;
+    }
+
+    .sidenote p:last-child {
+        margin-bottom: 0;
+    }
+
+    .sidenote blockquote {
+        font-style: italic;
+        padding: 0;
+    }
+
+    .sidenote blockquote em {
+        font-style: normal;
     }
 }
 
@@ -1139,4 +1162,43 @@ code {
 iframe {
     display: block;
     margin: 1.3em auto;
+}
+
+/* .capitals hr { */
+/*     display: none; */
+/* } */
+
+/* .capitals hr + hr { */
+/*     display: block; */
+/* } */
+
+.capitals p:first-of-type:first-letter,
+.capitals hr + p:first-letter {
+    display: block;
+    float: left;
+    font-size: 3em;
+    line-height: 1em;
+    margin-left: -0.1em;
+    margin-right: 2px;
+    margin-top: 0.1em;
+}
+
+#footnotediv div {
+    background-color: #fff;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    font-size: 0.8em;
+    margin-right: 60px;
+    max-width: 600px;
+    /* padding: 3px; */
+    padding: 12px;
+}
+
+#footnotediv .footnote-backref {
+    display: none;
+}
+
+#footnotediv p:last-child {
+    margin-bottom: 0;
 }

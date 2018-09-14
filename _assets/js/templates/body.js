@@ -131,7 +131,7 @@ var body = '<nav class="navbar navbar-default navbar-fixed-top">\n' +
     '{{/if}}' +
     '{{/if}}' +
     '</header>\n' +
-    '<section class="e-content{{#if indent}} indent{{/if}}{{#if sidenotes}} sidenotes{{/if}}">\n' +
+    '<section class="e-content{{#if indent}} indent{{/if}}{{#if sidenotes}} sidenotes{{/if}}{{#if capitals}} capitals{{/if}}">\n' +
     '{{{content}}}' +
     '{{#if footnotes}}' +
     '{{#if footnotes-title}}' +

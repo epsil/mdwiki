@@ -1,3 +1,6 @@
+@import url("../fonts/biolinum.css");
+@import url("../fonts/libertine.css");
+
 body {
     font-family: "Linux Libertine", "Linux Libertine O", "Minion Web", "Minion Pro", "Minion Std", Minion, "Crimson Text", "ETBembo", "ETBembo LF", "STIX Two Web", "STIX Two Text", Charter, "PT Serif", Georgia, "Iowan Old Style", Iowan, "Iowan Web", "Hoefler Text", "Libre Baskerville", Baskerville, Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, serif !important;
     font-size: 142% !important;

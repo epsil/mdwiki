@@ -1,15 +1,15 @@
-var $ = require('jquery')
-var settings = require('../json/settings.json')
 var matter = require('gray-matter')
-var markdown = require('./markdown')
 var md5 = require('md5')
-var social = require('./social')
 var typogr = require('typogr')
-var util = require('./util')
 var URI = require('urijs')
+var _ = require('lodash')
+var markdown = require('./markdown')
+var social = require('./social')
+var util = require('./util')
 var document = require('../templates/document')
 var body = require('../templates/body')
 var index = require('../templates/index')
+var settings = require('../json/settings.json')
 
 function parse (data) {
   // Allow the initial '---' to be omitted.
@@ -22,7 +22,7 @@ function parse (data) {
   }
   var view = matter(data)
   var props = view.data
-  $.extend(view, props)
+  view = _.assign(view, props)
   view.content = markdown(view.content, view)
   return view
 }
@@ -48,11 +48,11 @@ function addI18n (view) {
       settings[view.lang] === undefined) {
     view.lang = 'no'
   }
-  return $.extend({}, settings[view.lang], view)
+  return _.assign({}, settings[view.lang], view)
 }
 
 function dynamic (view, path) {
-  view = $.extend({
+  view = _.assign({
     'bitbucket': social.bitbucket.url(path),
     'bitbucket-history': social.bitbucket.history.url(path),
     facebook: social.facebook.url(path),
@@ -151,7 +151,7 @@ function typogrify (text) {
 
 function links (view, path) {
   view.content = util.dojQuery(view.content, function (body) {
-    body.addRelativeLinks(path)
+    body.relativizeUrls(path)
   })
   return view
 }
@@ -162,7 +162,7 @@ function compile (data, path) {
     file = 'index.md'
   }
 
-  var view = $.extend({}, settings, {
+  var view = _.assign({}, settings, {
     file: file,
     path: path,
     url: path
@@ -173,9 +173,11 @@ function compile (data, path) {
     return index(view)
   }
 
-  view = $.extend(view, parse(data), {
+  view = _.assign(view, parse(data), {
     md5: md5(data)
   })
+
+  view.date = view.date || view.created
 
   view = addArrays(view)
   view = addI18n(view)

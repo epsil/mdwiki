@@ -2,8 +2,8 @@
 
 body {
     font-family: Lora, "Adobe Garamond Pro", "Garamond Premier Pro", "ITC Garamond Std", Garamond, Baskerville, "Baskerville Old Face", "Crimson Text", Crimson, "Iowan Old Style", Iowan, "Iowan Web", Georgia, Charter, "Hoefler Text", "Calisto MT", Constantia, Andalus, Centaur, Cambria, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, Baskerville, serif !important;
-    font-size: 115% !important;
-    line-height: 1.4;
+    font-size: 125% !important;
+    line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 code, kbd, samp, tt, pre {
-    font-size: 0.9em !important;
+    font-size: 0.85em !important;
 }
 
 @media (max-width: 767px) {

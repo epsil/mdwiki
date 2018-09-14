@@ -127,23 +127,23 @@ markdown.options = function (opts) {
 
 markdown.parser = function (opts) {
   opts = opts || {}
-  opts = $.extend({}, markdown.defaults, opts)
+  opts = _.assign({}, markdown.defaults, opts)
   return markdown.plugins(markdownit(opts), opts)
 }
 
 markdown.plugins = function (md, opts) {
   opts = opts || {}
   md = md.use(figures, {figcaption: true})
-  if (opts.mathjax !== true) {
-    md = md.use(attr)
-  }
+  // if (opts.mathjax !== true) {
+  md = md.use(attr)
+  // }
   md = md.use(sub)
     .use(sup)
     .use(footnote)
     .use(taskcheckbox, {disabled: false})
     .use(deflist)
   md = markdown.containerPlugin(md)
-  if (opts.emoji !== false) {
+  if (opts.emoji === true) {
     md = md.use(emoji)
     md.renderer.rules.emoji = function (token, idx) {
       return '<span class="emoji emoji_' + token[idx].markup + '">' + token[idx].content + '</span>'

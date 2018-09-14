@@ -36,6 +36,7 @@ function addClickHandlers () {
   $('body').addCollapsibleHandlers()
   // expand closed sections
   $('body').addLinkHandlers()
+  $('body').addFootnoteHandlers()
   $('table').filter(function () {
     return $(this).find('thead th').length > 0
   }).DataTable({
@@ -59,8 +60,10 @@ function moveToHashOnLoad (hash) {
   moveToHash(hash)
   $(function () {
     moveToHash(hash)
-    var img = $('.e-content img')
-    if (img.length) {
+    var hasImages = $('.e-content img').length > 0
+    var hasTables = $('.e-content table').length > 0
+    var hasDynamicElements = hasImages || hasTables
+    if (hasDynamicElements) {
       setTimeout(function () {
         moveToHash(hash)
       }, 500)

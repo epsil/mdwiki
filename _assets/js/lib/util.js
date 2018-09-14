@@ -8,6 +8,7 @@ var URI = require('urijs')
 Clipboard = require('clipboard')
 clipboard = null
 moment = require('moment')
+var Reference = require('./reference')
 
 var util = {}
 
@@ -256,19 +257,44 @@ util.addTeXLogos = function () {
   })
 }
 
-util.addRelativeLinks = function (path) {
+// similar to Hakyll's relativizeUrls
+util.relativizeUrls = function (path) {
   return this.each(function () {
     $(this).find('a[href]').each(function () {
-      var href = $(this).attr('href')
+      var a = $(this)
+      var href = a.attr('href')
+      if (!a.hasClass('u-url') && !a.hasClass('external')) {
+        // redirect external links to local copy
+        var ref = util.getCachedUrl(href)
+        if (ref) {
+          href = ref.href
+          a.attr('href', href)
+          a.attr('title', a.attr('title') || ref.title || '')
+        }
+      }
+      // make URL relative
       href = util.urlRelative(path, href)
-      $(this).attr('href', href)
+      a.attr('href', href)
     })
     $(this).find('img[src]').each(function () {
-      var src = $(this).attr('src')
+      var img = $(this)
+      var src = img.attr('src')
       src = util.urlRelative(path, src)
-      $(this).attr('src', src)
+      img.attr('src', src)
     })
   })
+}
+
+util.getCachedUrl = function (url) {
+  var ref = Reference.getReference(url)
+  if (!ref) {
+    if (url.match(/^http:/i)) {
+      ref = Reference.getReference(url.replace(/^http/i, 'https'))
+    } else if (url.match(/^https:/i)) {
+      ref = Reference.getReference(url.replace(/^https/i, 'http'))
+    }
+  }
+  return ref
 }
 
 util.addBootstrapDivs = function (path) {
@@ -371,6 +397,7 @@ util.fixLinks = function () {
       if (text !== '' &&
           text.match(/[a-z]+:\//i) &&
           (text === href ||
+           text.match(/^[a-z]+:\//i) ||
            text === decodeURIComponent(href))) {
         a.addClass('url')
       }
@@ -787,7 +814,7 @@ $.fn.addHotkeys = util.addHotkeys
 $.fn.addPullQuotes = util.addPullQuotes
 $.fn.addSmallCaps = util.addSmallCaps
 $.fn.addTeXLogos = util.addTeXLogos
-$.fn.addRelativeLinks = util.addRelativeLinks
+$.fn.relativizeUrls = util.relativizeUrls
 $.fn.addBootstrapDivs = util.addBootstrapDivs
 $.fn.fixBlockquotes = util.fixBlockquotes
 $.fn.fixCenteredText = util.fixCenteredText

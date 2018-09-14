@@ -178,8 +178,9 @@ function referencesEntries (entry) {
   var summary = entry.title || entry.summary || entry.subtitle || entry.abstract
   // summary = ''
   if (summary) {
-    // summary = getSummary(path, title, summary, true)
-    summary = getSummary(path, title, summary, false)
+    // var render = true
+    var render = false
+    summary = getSummary(path, title, summary, render)
   }
   var ref = new Reference(title, path, summary, entry.hidden)
   var aliases = referencesAliasEntries(entry, summary)
@@ -214,7 +215,7 @@ function referencesBookmarkEntries (entry) {
       var label = r.title
       var href = util.urlResolve(entry.path, r.url)
       var title = entry.title || r.title
-      var ref = new Reference(label, href, title)
+      var ref = new Reference(label, href, title, entry.hidden)
       refs.push(ref)
     })
   }
@@ -224,7 +225,7 @@ function referencesBookmarkEntries (entry) {
 function referencesAliasEntries (entry, summary) {
   summary = summary || entry.summary
   var aliases = []
-  var punctuationRegexp = /[\s*[!?.;:]+$/
+  var punctuationRegexp = /[\s*[!?.;:]+$/i
   var endsWithPunctuation = entry.title.match(punctuationRegexp)
   // if (endsWithPunctuation) {
   //   var simpleTitle = entry.title.replace(punctuationRegexp, '')
@@ -242,6 +243,10 @@ function referencesAliasEntries (entry, summary) {
       var aliasRef = new Reference(alias, entry.path, summary, entry.hidden)
       aliases.push(aliasRef)
     })
+  }
+  if (entry.url && entry.url !== entry.path) {
+    var urlRef = new Reference(entry.url, entry.path, summary, entry.hidden)
+    aliases.push(urlRef)
   }
   return aliases
 }

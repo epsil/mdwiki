@@ -1,0 +1,60 @@
+@import url("../fonts/stix.css");
+@import url("book.css");
+
+.e-content a, .e-content a:hover {
+    border: none;
+    color: rgb(47, 74, 139);
+    text-decoration: underline;
+}
+
+.e-content a:hover {
+    color: #985735;
+}
+
+body {
+    font-family: "STIX Two Web", "STIX Two Text", "Minion Web", "Minion Pro", "Minion Std", Minion, "Crimson Text", "ETBembo", "ETBembo LF", Charter, "PT Serif", Georgia, "Iowan Old Style", Iowan, "Iowan Web", "Hoefler Text", "Libre Baskerville", Baskerville, Cambria, Constantia, Utopia, Marion, Cochin, "Palatino Linotype", Palatino, serif !important;
+    font-size: 125% !important;
+}
+
+h1, h2, h3, h4, h5, h6, nav, button, input, kbd, textarea, table, header, .modal {
+    font-family: Arial, Helvetica, "Myriad Web", "Myriad Pro", "Myriad Std", Myriad, -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", "PT Sans", "Droid Sans", "Open Sans", Lato, Avenir, "Avenir Next", Futura, "Gill Sans MT", "Gill Sans", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, sans-serif !important;
+    font-weight: normal;
+}
+
+h2 {
+    color: rgb(152, 87, 53);
+    border-bottom: 1px solid rgb(151, 176, 200);
+}
+
+h3 {
+    color: rgb(114, 65, 40);
+}
+
+h4 {
+    color: rgb(89, 51, 31);
+}
+
+h5 {
+    font-style: italic;
+}
+
+.h-entry .collapse-button,
+.collapse-button[aria-expanded="false"] {
+    border: none;
+    padding-bottom: 0;
+}
+
+[aria-hidden="true"] {
+    text-decoration: none !important;
+}
+
+table {
+    font-size: 0.85em;
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 115% !important;
+        /* line-height: 1.3; */
+    }
+}

@@ -1,7 +1,6 @@
 var stringSimilarity = require('string-similarity')
 var page = require('./page')
 var sort = require('./sort')
-var util = require('./util')
 var references = require('../json/references.json')
 var URI = require('urijs')
 var $ = require('jquery')
@@ -66,7 +65,7 @@ Reference.extractReferenceAnchorsFromMarkdown = function (md, dict) {
     var anchor = matches[3]
     var ref = Reference.getReference(title)
     if (ref) {
-      var href = util.urlWithoutAnchor(ref.href) + anchor
+      var href = URI(ref.href).fragment('').toString() + anchor
       ref = new Reference(label, href, ref.title)
       dict = Reference.addReferenceToDictionary(ref, dict)
     }
@@ -176,9 +175,12 @@ Reference.search = function (str) {
     return []
   }
   var arr = Reference.dictionaryToArray()
-  arr = arr.filter(function (x) {
-    return x.hidden !== true
-  })
+  var isExplicit = str.match(/!/)
+  if (!isExplicit) {
+    arr = arr.filter(function (x) {
+      return x.hidden !== true
+    })
+  }
   sort(arr, sort.descending(function (x) {
     var label = x.label.toUpperCase()
     return stringSimilarity.compareTwoStrings(label, str)
@@ -203,7 +205,6 @@ Reference.searchHandler = function (e) {
   str = str.replace(/\s+/gi, ' ').trim()
   var matches = Reference.search(str)
   Reference.updateSearchMatches(matches)
-  // input.val('')
   return false
 }
 
@@ -232,8 +233,18 @@ Reference.updateSearchMatches = function (matches) {
   var html = Reference.renderSearchMatches(matches)
   var div = Reference.findSearchMatchesContainer()
   div.html(html)
-  div.addRelativeLinks(page.path())
+  div.relativizeUrls(page.path())
+  div.find('a').focus(function () {
+    setTimeout(function () {
+      Reference.hideSearchMatches()
+    }, 500)
+  })
   div.fixLinks()
+}
+
+Reference.hideSearchMatches = function () {
+  Reference.updateSearchMatches([])
+  $('nav form input').val('')
 }
 
 Reference.findSearchMatchesContainer = function () {
