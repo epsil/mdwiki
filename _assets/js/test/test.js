@@ -1,7 +1,7 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports={
   "A PAGE": {
-    "href": "/",
+    "href": "/page/",
     "title": "A page"
   },
   "ANOTHER PAGE": {
@@ -12,13 +12,25 @@ module.exports={
     "href": "/anotherpage/",
     "title": "Another page"
   },
+  "ENCRYPTED PAGE": {
+    "href": "/pass/",
+    "title": "Encrypted page"
+  },
   "INDEX": {
     "href": "/",
-    "title": "A page"
+    "title": "Markdown test"
+  },
+  "MARKDOWN *TEST*": {
+    "href": "/",
+    "title": "Markdown test"
   },
   "PAGE": {
     "href": "/page/",
-    "title": "Another page"
+    "title": "A page"
+  },
+  "PASS": {
+    "href": "/pass/",
+    "title": "Encrypted page"
   }
 }
 },{}],2:[function(require,module,exports){

@@ -1,6 +1,6 @@
 {
   "A PAGE": {
-    "href": "/",
+    "href": "/page/",
     "title": "A page"
   },
   "ANOTHER PAGE": {
@@ -11,12 +11,24 @@
     "href": "/anotherpage/",
     "title": "Another page"
   },
+  "ENCRYPTED PAGE": {
+    "href": "/pass/",
+    "title": "Encrypted page"
+  },
   "INDEX": {
     "href": "/",
-    "title": "A page"
+    "title": "Markdown test"
+  },
+  "MARKDOWN *TEST*": {
+    "href": "/",
+    "title": "Markdown test"
   },
   "PAGE": {
     "href": "/page/",
-    "title": "Another page"
+    "title": "A page"
+  },
+  "PASS": {
+    "href": "/pass/",
+    "title": "Encrypted page"
   }
 }
